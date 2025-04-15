@@ -3,18 +3,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>IDW</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<header>
 			<div class="logo"></div>
 			<nav>
 				<ul>
-					<li><a href="/index.html">Inicio</a></li>
-					<li><a href="/contacto.html">Contactanos</a></li>
-					<li><a href="/info.html">¿Quienes somos?</a></li>
+					<li>Inicio</li>
+					<li>Contactanos</li>
+					<li>¿Quienes somos?</li>
 					<li>Iniciar sesión</li>
 					<li>Registrarse</li>
 				</ul>
