@@ -6,28 +6,24 @@
 		<title>IDW</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="static/styles.css">
 		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<header>
-			<div class="logo"></div>
+			<div class="title-header"><img class="logo-header" src="static/img/spider-kitty.png" alt="spider-kitty">Salones Spider-Kitty</div>
 			<nav>
 				<ul>
-					<li>Inicio</li>
-					<li>Contactanos</li>
-					<li>¿Quienes somos?</li>
-					<li>Iniciar sesión</li>
-					<li>Registrarse</li>
+					<li><a href="/index.html">Inicio</a></li>
+					<li><a href="/contacto.html">Contactanos</a></li>
+					<li><a href="/info.html">¿Quiénes somos?</a></li>
+					<li><a href="#">Iniciar sesión</a></li>
+					<li><a href="#">Registrarse</a></li>
 				</ul>
 			</nav>
 		</header>
-			<div class="hero">
-				<h1>Encontrá el salón ideal para tu evento</h1>
-				<h2>Encontrá el salón ideal para tu evento</h2>
-				<button>Consultar salones ></button>
-			</div>
-		<h1>CONTACTO</H1>
-		<main>
+	
+		<main class="main-contacto">
 			<h1>Contactate con nosotros</h1>
 			<h2>¿Tenés dudas? Escribinos y te respondemos en seguida</h2>
 			<form action="">
@@ -37,51 +33,82 @@
 				<input id="apellido" type="text" name="apellido" />
 				<label for="email">Email</label>
 				<input id="email" type="email" name="email" />
-				<label for ="mensaje">Mensaje</label>
-				<input id="mensaje" type="text" name="mensaje" />
+				<label for="mensaje">Mensaje</label>
+				<textarea id="mensaje" name="mensaje"></textarea>
+
 				<input type="submit" value="Enviar" />
 			</form>
-		<footer>
-			<div class="icons">
-				<div class="footer-logo"></div>
-				<div class="x-icon"></div>
-				<div class="ig-icon"></div>
-				<div class="yt-icon"></div>
-				<div class="li-icon"></div>
-			</div>
-			<div class="use-cases">
-				<ul>
-					<li>UI design</li>
-					<li>UX design</li>
-					<li>Wireframing</li>
-					<li>Diagramming</li>
-					<li>Brainstorming</li>
-					<li>Online whiteboard</li>
-					<li>Team collaboration</li>
-				</ul>
-			</div>
-			<div class="explore">
-				<ul>
-					<li>Design</li>
-					<li>Prototyping</li>
-					<li>Development features</li>
-					<li>Design systems</li>
-					<li>Collaboration features</li>
-					<li>Design process</li>
-					<li>FigJam</li>
-				</ul>
-			</div>
-			<div class="resources">
-				<ul>
-					<li>Blog</li>
-					<li>Best Practices</li>
-					<li>Colors</li>
-					<li>Color Wheel</li>
-					<li>Support</li>
-					<li>Developers</li>
-					<li>Resource library</li>
-				</ul></div>
-		</footer>
 		</main>
+		<footer class="footer">
+			<div class="footer-columns">
+			  <div class="footer-col logo-social">
+				<img class="footer-logo" src="static/img/spider-kitty.png" alt="Logo" />
+				<div class="social-icons">
+				  <img class="redes-icons" src="static/img/x-icon.png" alt="X" />
+				  <img class="redes-icons" src="static/img/instagram-icon.png" alt="Instagram" />
+				  <img class="redes-icons" src="static/img/facebook-icon.png" alt="Facebook" />
+				  <img class="redes-icons" src="static/img/linkedin-icon.png" alt="LinkedIn" />
+				</div>
+			  </div>
+		  
+			  <div class="footer-col">
+				<h4>Enlaces útiles</h4>
+				<ul>
+				  <li>Inicio</li>
+				  <li>Contactanos</li>
+				  <li>¿Quiénes somos?</li>
+				  <li>Salones</li>
+				  <li>¿Tenés cuenta? Iniciar sesión</li>
+				  <li>¿Sos nuevo? Registrarse</li>
+				  <li>Team collaboration</li>
+				</ul>
+			  </div>
+		  
+			  <div class="footer-col">
+				<h4>Ayuda</h4>
+				<ul>
+				  <li>Preguntas frecuentes</li>
+				  <li>Términos y condiciones</li>
+				  <li>Política de privacidad</li>
+				  <li>Ayuda en línea</li>
+				  <li>Collaboration features</li>
+				  <li>Design process</li>
+				  <li>FigJam</li>
+				</ul>
+			  </div>
+		  
+			  <div class="footer-col">
+				<h4>Redes sociales</h4>
+				<ul>
+				  <li>Facebook</li>
+				  <li>Instagram</li>
+				  <li>Colors</li>
+				  <li>Color wheel</li>
+				  <li>Support</li>
+				  <li>Developers</li>
+				  <li>Resource library</li>
+				</ul>
+			  </div>
+			</div>
+		  
+			<div class="medios-pago">
+			  <h2>Medios de pago</h2>
+			  <div class="logos-pago">
+				<img src="static/img/mercado-pago.png" alt="Mercado Pago" />
+				<img src="static/img/visa-logo.png" alt="Visa" />
+				<img src="static/img/mastercard-logo.png" alt="Mastercard" />
+				<img src="static/img/american-express-logo.png" alt="American Express" />
+				<img src="static/img/pago-facil-logo.png" alt="Pago Fácil" />
+				<img src="static/img/rapipago-logo.png" alt="Rapipago" />
+			  </div>
+			</div>
+			<br/>
+			<hr/>
+			<br/>
+			<div class="copyright">
+				<p>&copy; Copyright. Todos los derechos reservados</p>
+			</div>
+		  </footer>
+	
 	</body>
 </html>
