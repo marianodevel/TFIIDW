@@ -1,0 +1,431 @@
+:root {
+    --sds-color-border-brand-default: #8ed5fb;
+    --sds-color-background-brand-default: #5ff0fe;
+    --sds-color-text-brand-tertiary: #060449;
+    --sds-color-icon-brand-on-brand: #c0fbfa;
+    --sds-color-text-brand-on-brand: #FFFFFF;
+    --black: #1A1A1A;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--sds-color-icon-brand-on-brand);
+    color: var(--black);
+    line-height: 1.5;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--sds-color-border-brand-default);
+    background-color: var(--sds-color-border-brand-default);
+  }
+
+  .title-header {
+    font-weight: bold;
+    vertical-align: middle;
+    font-size:x-large;
+    color: var(--sds-color-text-brand-tertiary);
+  }
+  
+  .logo-header {
+    width: 40px;
+    height: 40px;
+  }
+
+  nav {
+    background-color: var(--sds-color-border-brand-default);
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 500;
+  }
+  
+  nav li {
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  nav li:hover {
+    background-color: var(--sds-color-icon-brand-on-brand);
+  }
+  
+  /* Hero */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    text-align: center;
+    background: linear-gradient(315deg, rgb(162, 12, 200) 20%, rgba(60,132,206,1) 40%, rgb(238, 143, 48) 60%, rgb(46, 201, 49) 80%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+    max-width: 600px;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hero button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+/* Sección de salones */
+.salones {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+  
+  .salones h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .salones h3 {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+  }
+  
+  /* Grid de salones */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* Contenedor de imagen con tamaño fijo */
+  .image-placeholder {
+    width: 100%;
+    height: 350px; /* Altura fija para todas las imágenes */
+    margin-bottom: 1.25rem;
+    border-radius: 6px;
+    overflow: hidden; /* Para que las imágenes no se salgan del contenedor */
+  }
+  
+  /* Hacer que todas las imágenes se ajusten uniformemente */
+  .salon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace que la imagen cubra todo el contenedor manteniendo proporciones */
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover .salon-image {
+    transform: scale(1.05);
+  }
+  
+  /* Estilos para texto */
+  .card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card .capacity {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+  }
+  
+  .more-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 0.75rem 1.75rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+  }
+  
+  .more-btn:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  /* Footer */
+
+  .footer {
+    background-color: var(--sds-color-border-brand-default);
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--sds-color-border-brand-default);
+    color: var(--black);
+  }
+  
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+  
+  .footer-col h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-col ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--black);
+  }
+  
+  .logo-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .redes-icons {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Medios de pago */
+  .medios-pago {
+    margin-top: 3rem;
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--sds-color-border-brand-default);
+  }
+  
+  .medios-pago h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .logos-pago {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .logos-pago img {
+    width: auto;
+    height: 45px;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  .main-contacto h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .main-contacto h2 {
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    width: 300px;
+    background-color: white;
+  }
+  
+  label {
+    font-size: 0.9rem;
+    text-align: left;
+    color: #555;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  input[type="submit"] {
+    padding: 0.75rem;
+    background-color: #222;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #444;
+  }
+
+  /* Sección Info */
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 1rem;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .info-hero {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .info-hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .info-hero h2 {
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: #555;
+  }
+  
+  .info-content {
+    max-width: 800px;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  
