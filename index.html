@@ -1,82 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8">
-		<title>IDW</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-	</head>
-	<body>
-		<header>
-			<div class="logo"></div>
-			<nav>
-				<ul>
-					<li><a href="/index.html">Inicio</a></li>
-					<li><a href="/contacto.html">Contactanos</a></li>
-					<li><a href="/info.html">¿Quienes somos?</a></li>
-					<li>Iniciar sesión</li>
-					<li>Registrarse</li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<div class="hero">
-				<h1>Encontrá el salón ideal para tu evento</h1>
-				<h2>Encontrá el salón ideal para tu evento</h2>
-				<button>Consultar salones ></button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IDW</title>
+    <link rel="stylesheet" href="static/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="title-header"><img class="logo-header" src="static/img/spider-kitty.png" alt="spider-kitty">Salones Spider-Kitty</div>
+      <nav class="nav">
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/contacto.html">Contactanos</a></li>
+          <li><a href="/info.html">¿Quiénes somos?</a></li>
+          <li><a href="#">Iniciar sesión</a></li>
+          <li><a href="#">Registrarse</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Encontrá el salón ideal<br />para tu evento</h1>
+        <h2>Descubrí salones pensados para<br />que cada celebración sea única</h2>
+        <button>Consultar salones</button>
+      </section>
+
+      <section class="salones">
+        <h2>Explorá salones disponibles cerca tuyo</h2>
+        <h3>Compará y encontrá el que mejor se adapta a tu evento</h3>
+        <div class="grid">
+          <div class="card">
+            <div class="image-placeholder"><img class="salon-image" src="static/img/salon-de-fiestas-1.jpeg" alt="salón de fiestas"></div>
+            <h4>Isla de aventuras</h4>
+            <p class="price">$100000</p>
+            <p class="capacity">Capacidad 40 personas</p>
+          </div>
+          <div class="card">
+            <div class="image-placeholder"><img class="salon-image" src="static/img/salon-de-fiestas-2.jpg" alt="salón de fiestas"></div>
+            <h4>El Rincón de las Maravillas</h4>
+            <p class="price">$90000</p>
+            <p class="capacity">Capacidad 50 personas</p>
+          </div>
+          <div class="card">
+            <div class="image-placeholder"><img class="salon-image" src="static/img/salon-de-fiestas-3.jpg" alt="salón de fiestas"></div>
+            <h4>Hey Arnold</h4>
+            <p class="price">$130000</p>
+            <p class="capacity">Capacidad 60 personas</p>
+          </div>
+          <div class="card">
+            <div class="image-placeholder"><img class="salon-image" src="static/img/salon-de-fiestas-4.jpg" alt="salón de fiestas"></div>
+            <h4>La Isla de los Monitos</h4>
+            <p class="price">$80000</p>
+            <p class="capacity">Capacidad 40 personas</p>
+          </div>
+          <div class="card">
+            <div class="image-placeholder"><img class="salon-image" src="static/img/salon-de-fiestas-5.jpg" alt="salón de fiestas"></div>
+            <h4>Colorín Colorado</h4>
+            <p class="price">$95000</p>
+            <p class="capacity">Capacidad 50 personas</p>
+          </div>
+          <div class="card">
+            <div class="image-placeholder"><img class="salon-image" src="static/img/salon-de-fiestas-6.jpg" alt="salón de fiestas"></div>
+            <h4>Hakuna Matata</h4>
+            <p class="price">$100000</p>
+            <p class="capacity">Capacidad 70 personas</p>
+          </div>
+        </div>
+        <button class="more-btn">Ver más salones</button>
+      </section>
+    </main>
+
+    <footer class="footer">
+		<div class="footer-columns">
+		  <div class="footer-col logo-social">
+			<img class="footer-logo" src="static/img/spider-kitty.png" alt="Logo" />
+			<div class="social-icons">
+			  <img class="redes-icons" src="static/img/x-icon.png" alt="X" />
+			  <img class="redes-icons" src="static/img/instagram-icon.png" alt="Instagram" />
+			  <img class="redes-icons" src="static/img/facebook-icon.png" alt="Facebook" />
+			  <img class="redes-icons" src="static/img/linkedin-icon.png" alt="LinkedIn" />
 			</div>
-			<div class="grid">
-				<h2>Salones</h2>
-				<h3>Subtítulo</h3>
-				<div class="card" id="salon 1">
-					<div class="image-container"></img>
-						<h4>Nombre salón</h4>
-						<h5>Precio</h5>
-						<h6>Descripcion</h6>
-					</div>
-			</div>
-		</main>
-		<footer>
-			<div class="icons">
-				<div class="footer-logo"></div>
-				<div class="x-icon"></div>
-				<div class="ig-icon"></div>
-				<div class="yt-icon"></div>
-				<div class="li-icon"></div>
-			</div>
-			<div class="use-cases">
-				<ul>
-					<li>UI design</li>
-					<li>UX design</li>
-					<li>Wireframing</li>
-					<li>Diagramming</li>
-					<li>Brainstorming</li>
-					<li>Online whiteboard</li>
-					<li>Team collaboration</li>
-				</ul>
-			</div>
-			<div class="explore">
-				<ul>
-					<li>Design</li>
-					<li>Prototyping</li>
-					<li>Development features</li>
-					<li>Design systems</li>
-					<li>Collaboration features</li>
-					<li>Design process</li>
-					<li>FigJam</li>
-				</ul>
-			</div>
-			<div class="resources">
-				<ul>
-					<li>Blog</li>
-					<li>Best Practices</li>
-					<li>Colors</li>
-					<li>Color Wheel</li>
-					<li>Support</li>
-					<li>Developers</li>
-					<li>Resource library</li>
-				</ul></div>
-		</footer>
-	</body>
+		  </div>
+	  
+		  <div class="footer-col">
+			<h4>Enlaces útiles</h4>
+			<ul>
+			  <li>Inicio</li>
+			  <li>Contactanos</li>
+			  <li>¿Quiénes somos?</li>
+			  <li>Salones</li>
+			  <li>¿Tenés cuenta? Iniciar sesión</li>
+			  <li>¿Sos nuevo? Registrarse</li>
+			  <li>Team collaboration</li>
+			</ul>
+		  </div>
+	  
+		  <div class="footer-col">
+			<h4>Ayuda</h4>
+			<ul>
+			  <li>Preguntas frecuentes</li>
+			  <li>Términos y condiciones</li>
+			  <li>Política de privacidad</li>
+			  <li>Ayuda en línea</li>
+			  <li>Collaboration features</li>
+			  <li>Design process</li>
+			  <li>FigJam</li>
+			</ul>
+		  </div>
+	  
+		  <div class="footer-col">
+			<h4>Redes sociales</h4>
+			<ul>
+			  <li>Facebook</li>
+			  <li>Instagram</li>
+			  <li>Colors</li>
+			  <li>Color wheel</li>
+			  <li>Support</li>
+			  <li>Developers</li>
+			  <li>Resource library</li>
+			</ul>
+		  </div>
+		</div>
+	  
+		<div class="medios-pago">
+		  <h2>Medios de pago</h2>
+		  <div class="logos-pago">
+			<img src="static/img/mercado-pago.png" alt="Mercado Pago" />
+			<img src="static/img/visa-logo.png" alt="Visa" />
+			<img src="static/img/mastercard-logo.png" alt="Mastercard" />
+			<img src="static/img/american-express-logo.png" alt="American Express" />
+			<img src="static/img/pago-facil-logo.png" alt="Pago Fácil" />
+			<img src="static/img/rapipago-logo.png" alt="Rapipago" />
+		  </div>
+		</div>
+		<br/>
+		<hr/>
+		<br/>
+		<div class="copyright">
+			<p>&copy; Copyright. Todos los derechos reservados</p>
+		</div>
+	  </footer>
+	  
+  </body>
 </html>
