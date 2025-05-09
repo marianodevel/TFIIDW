@@ -1,5 +1,5 @@
 :root {
-    --sds-color-border-brand-default: #8ed5fb;
+    --sds-color-border-brand-default: #8ed5fb !important;
     --sds-color-background-brand-default: #5ff0fe;
     --sds-color-text-brand-tertiary: #060449;
     --sds-color-icon-brand-on-brand: #c0fbfa;
@@ -42,9 +42,9 @@
     height: 40px;
   }
 
-  nav {
-    background-color: var(--sds-color-border-brand-default);
-  }
+  nav.navbar {
+    background-color: var(--sds-color-border-brand-default) !important;
+  } 
   
   nav ul {
     list-style: none;
@@ -135,20 +135,20 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 /* Sección de salones */
-.salones {
+  .salon-card {
     max-width: 1200px;
     margin: 0 auto;
     padding: 3rem 2rem;
   }
   
-  .salones h2 {
+  .salon-card h2 {
     font-size: 2rem;
     margin-bottom: 0.75rem;
     color: #333;
     font-weight: 700;
   }
   
-  .salones h3 {
+  .salon-card h3 {
     font-size: 1.25rem;
     color: #666;
     margin-bottom: 2.5rem;
@@ -164,8 +164,8 @@
   }
   
   .card {
-    background-color: white;
-    border: 1px solid #e0e0e0;
+    background-color: white !important;
+    border: 1px solid #e0e0e0 !important;
     border-radius: 8px;
     padding: 1.25rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
