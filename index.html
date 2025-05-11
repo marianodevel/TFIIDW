@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IDW</title>
+    <title>Salones Spider-Kitty</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="static/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,32 +12,34 @@
   </head>
   <body>
     <header class="header">
-      <div class="title-header"><img class="logo-header" src="static/img/spider-kitty.png" alt="spider-kitty">Salones Spider-Kitty</div>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Contactanos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">¿Quiénes somos?</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Iniciar sesión</a> 
-              </li>  
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Registrarse</a> 
-              </li>   
-            </ul>
-          </div>
-      </nav>
-    </header>
+			<!--Cambiamos el contenedor del logo por un h1 para mejorar la accesibilidad y SEO-->
+			<!--se agrego la etiqueta span para que salones quede como texto plano y no forme parate de la estructura-->
+			<h1 class="title-header"><img class="logo-header" src="static/img/spider-kitty.png" alt="spider-kitty"><span>Salones Spider-Kitty</span></h1>
+			<nav class="navbar navbar-expand-lg bg-body-tertiary">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+					  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link active" aria-current="page" href="#">Contactanos</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link active" aria-current="page" href="#">¿Quiénes somos?</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link active" aria-current="page" href="#">Iniciar sesión</a> 
+					</li>  
+					<li class="nav-item">
+					  <a class="nav-link active" aria-current="page" href="#">Registrarse</a> 
+					</li>   
+				  </ul>
+				</div>
+			</nav>
+		  </header>
 
     <main>
       <section class="hero">
@@ -63,54 +65,59 @@
               </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4 mb-4">
-              <div class="salon-card h-100">
+              <!--cambios de etiquetas div por etiquetas article-->
+              <article class="salon-card h-100">
                 <div class="image-placeholder">
                   <img class="salon-image" src="static/img/salon-de-fiestas-2.jpg" alt="salón de fiestas">
                 </div>
                 <h4>El Castillo</h4>
                 <p class="price">$120000</p>
                 <p class="capacity">Capacidad 30 personas</p>
-              </div>
+              </article>
             </div>
             <div class="col-12 col-sm-6 col-md-4 mb-4">
-              <div class="salon-card h-100">
+              <!--cambios de etiquetas div por etiquetas article-->
+              <article class="salon-card h-100">
                 <div class="image-placeholder">
                   <img class="salon-image" src="static/img/salon-de-fiestas-3.jpg" alt="salón de fiestas">
                 </div>
                 <h4>Aventura mágica</h4>
                 <p class="price">$110000</p>
                 <p class="capacity">Capacidad 35 personas</p>
-              </div>
+              </article>
             </div>
             <div class="col-12 col-sm-6 col-md-4 mb-4">
-              <div class="salon-card h-100">
+              <!--cambios de etiquetas div por etiquetas article-->
+              <article class="salon-card h-100">
                 <div class="image-placeholder">
                   <img class="salon-image" src="static/img/salon-de-fiestas-4.jpg" alt="salón de fiestas">
                 </div>
                 <h4>Pequeños gigantes</h4>
                 <p class="price">$95000</p>
                 <p class="capacity">Capacidad 25 personas</p>
-              </div>
+              </article>
             </div>
             <div class="col-12 col-sm-6 col-md-4 mb-4">
-              <div class="salon-card h-100">
+              <!--cambios de etiquetas div por etiquetas article-->
+              <article class="salon-card h-100">
                 <div class="image-placeholder">
                   <img class="salon-image" src="static/img/salon-de-fiestas-5.jpg" alt="salón de fiestas">
                 </div>
                 <h4>Reino de sueños</h4>
                 <p class="price">$105000</p>
                 <p class="capacity">Capacidad 30 personas</p>
-              </div>
+              </article>
             </div>
             <div class="col-12 col-sm-6 col-md-4 mb-4">
-              <div class="salon-card h-100">
+              <!--cambios de etiquetas div por etiquetas article-->
+              <article class="salon-card h-100">
                 <div class="image-placeholder">
                   <img class="salon-image" src="static/img/salon-de-fiestas-6.jpg" alt="salón de fiestas">
                 </div>
                 <h4>Fiestilandia</h4>
                 <p class="price">$99000</p>
                 <p class="capacity">Capacidad 40 personas</p>
-              </div>
+              </article>
             </div>
           </div>
         </div>
@@ -119,76 +126,84 @@
         </div>
       </section>
     </main>
-
+    
     <footer class="footer">
-		<div class="footer-columns">
-		  <div class="footer-col logo-social">
-			<img class="footer-logo" src="static/img/spider-kitty.png" alt="Logo" />
-			<div class="social-icons">
-			  <img class="redes-icons" src="static/img/x-icon.png" alt="X" />
-			  <img class="redes-icons" src="static/img/instagram-icon.png" alt="Instagram" />
-			  <img class="redes-icons" src="static/img/facebook-icon.png" alt="Facebook" />
-			  <img class="redes-icons" src="static/img/linkedin-icon.png" alt="LinkedIn" />
-			</div>
-		  </div>
-	  
-		  <div class="footer-col">
-			<h4>Enlaces útiles</h4>
-			<ul>
-			  <li>Inicio</li>
-			  <li>Contactanos</li>
-			  <li>¿Quiénes somos?</li>
-			  <li>Nuestros salones</li>
-			  <li>¿Tenés cuenta? Iniciar sesión</li>
-			  <li>¿Sos nuevo? Registrarse</li>
-			  <li>Reservas disponibles</li>
-			</ul>
-		  </div>
-	  
-		  <div class="footer-col">
-			<h4>Ayuda</h4>
-			<ul>
-			  <li>Preguntas frecuentes</li>
-			  <li>Términos y condiciones</li>
-			  <li>Política de privacidad</li>
-			  <li>Centro de ayuda</li>
-			  <li>Guía para tu evento</li>
-			  <li>Cómo reservar</li>
-			  <li>Cancelaciones y reembolsos</li>
-			</ul>
-		  </div>
-	  
-		  <div class="footer-col">
-			<h4>Redes sociales</h4>
-			<ul>
-			  <li>Facebook</li>
-			  <li>Instagram</li>
-			  <li>Pinterest</li>
-			  <li>TikTok</li>
-			  <li>Discord</li>
-			  <li>LinkedIn</li>
-			</ul>
-		  </div>
-		</div>
-	  
-		<div class="medios-pago">
-		  <h2>Medios de pago</h2>
-		  <div class="logos-pago">
-			<img src="static/img/mercado-pago.png" alt="Mercado Pago" />
-			<img src="static/img/visa-logo.png" alt="Visa" />
-			<img src="static/img/mastercard-logo.png" alt="Mastercard" />
-			<img src="static/img/american-express-logo.png" alt="American Express" />
-			<img src="static/img/pago-facil-logo.png" alt="Pago Fácil" />
-			<img src="static/img/rapipago-logo.png" alt="Rapipago" />
-		  </div>
-		</div>
-		<br/>
-		<hr/>
-		<br/>
-		<div class="copyright">
-			<p>&copy; Copyright. Hecho con ❤️ por IDW S.A. Salones Spider-Kitty. Todos los derechos reservados</p>
-		</div>
-	  </footer>
-	   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  </body>
-</html>
+      <!--cambio de div por section-->	
+      <section class="footer-columns">
+        <!--cambio de div por article-->	
+        <article class="footer-col logo-social">
+        <img class="footer-logo" src="static/img/spider-kitty.png" alt="Logo" />
+        <div class="social-icons">
+          <img class="redes-icons" src="static/img/x-icon.png" alt="X" />
+          <img class="redes-icons" src="static/img/instagram-icon.png" alt="Instagram" />
+          <img class="redes-icons" src="static/img/facebook-icon.png" alt="Facebook" />
+          <img class="redes-icons" src="static/img/linkedin-icon.png" alt="LinkedIn" />
+        </div>
+        </article>
+      
+        <!--cambio de div por section-->
+        <section class="footer-col">
+        <h4>Enlaces útiles</h4>
+        <ul>
+          <li>Inicio</li>
+          <li>Contactanos</li>
+          <li>¿Quiénes somos?</li>
+          <li>Nuestros salones</li>
+          <li>¿Tenés cuenta? Iniciar sesión</li>
+          <li>¿Sos nuevo? Registrarse</li>
+          <li>Reservas disponibles</li>
+        </ul>
+        </section>
+      
+        <!--cambio de div por section-->
+        <section class="footer-col">
+        <h4>Ayuda</h4>
+        <ul>
+          <li>Preguntas frecuentes</li>
+          <li>Términos y condiciones</li>
+          <li>Política de privacidad</li>
+          <li>Centro de ayuda</li>
+          <li>Guía para tu evento</li>
+          <li>Cómo reservar</li>
+          <li>Cancelaciones y reembolsos</li>
+        </ul>
+        </section>
+      
+        <!--cambio de div por section-->
+        <section class="footer-col">
+        <h4>Redes sociales</h4>
+        <ul>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Pinterest</li>
+          <li>TikTok</li>
+          <li>Discord</li>
+          <li>LinkedIn</li>
+        </ul>
+        </section>
+      </section>
+      
+      <!--cambio de div por section-->
+      <section class="medios-pago">
+        <h2>Medios de pago</h2>
+        <div class="logos-pago">
+        <img src="static/img/mercado-pago.png" alt="Mercado Pago" />
+        <img src="static/img/visa-logo.png" alt="Visa" />
+        <img src="static/img/mastercard-logo.png" alt="Mastercard" />
+        <img src="static/img/american-express-logo.png" alt="American Express" />
+        <img src="static/img/pago-facil-logo.png" alt="Pago Fácil" />
+        <img src="static/img/rapipago-logo.png" alt="Rapipago" />
+        </div>
+      </section>
+      <br/>
+      <hr/>
+      <br/>
+      <!--cambio de div por section-->
+      <section class="copyright">
+        <p>&copy; Copyright. Hecho con ❤️ por IDW S.A. Salones Spider-Kitty. Todos los derechos reservados</p>
+      </section>
+      </footer>
+      
+    </body>
+  </html>
+  
