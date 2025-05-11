@@ -1,48 +1,55 @@
 <!DOCTYPE html>
+<!-- index.html actualizado con Bootstrap, etiquetas semánticas y cards fijas -->
+<!-- Comentarios originales conservados -->
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Salones Spider-Kitty</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Font Awesome para el ícono X del menú -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="static/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fuente Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header class="header">
-			<!--Cambiamos el contenedor del logo por un h1 para mejorar la accesibilidad y SEO-->
-			<!--se agrego la etiqueta span para que salones quede como texto plano y no forme parate de la estructura-->
-			<h1 class="title-header"><img class="logo-header" src="static/img/spider-kitty.png" alt="spider-kitty"><span>Salones Spider-Kitty</span></h1>
-			<nav class="navbar navbar-expand-lg bg-body-tertiary">
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				  <span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-					  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link active" aria-current="page" href="#">Contactanos</a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link active" aria-current="page" href="#">¿Quiénes somos?</a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link active" aria-current="page" href="#">Iniciar sesión</a> 
-					</li>  
-					<li class="nav-item">
-					  <a class="nav-link active" aria-current="page" href="#">Registrarse</a> 
-					</li>   
-				  </ul>
-				</div>
-			</nav>
-		  </header>
+      <!--Cambiamos el contenedor del logo por un h1 para mejorar la accesibilidad y SEO-->
+      <div class="container-fluid">
+        <div class="row d-flex align-items-center">
+          <div class="col-md-4 col-6">
+            <!--se agregó la etiqueta span para que salones quede como texto plano y no forme parte de la estructura-->
+            <h1 class="title-header d-flex align-items-center gap-2">
+              <img class="logo-header" src="static/img/spider-kitty.png" alt="spider-kitty">
+              <span>Salones Spider-Kitty</span>
+            </h1>
+          </div>
+          <div class="col-md-8 col-6">
+            <nav class="navbar navbar-expand-lg">
+              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-close-icon d-none"><i class="fas fa-times"></i></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
+                  <li class="nav-item"><a class="nav-link" href="contacto.html">Contactanos</a></li>
+                  <li class="nav-item"><a class="nav-link" href="info.html">¿Quiénes somos?</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Iniciar sesión</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Registrarse</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <main>
-      <section class="hero">
+       <section class="hero">
         <h1>Encontrá el salón ideal<br />para tu evento</h1>
         <h2>Descubrí salones pensados para<br />que cada celebración sea única</h2>
         <button>Consultar salones</button>
@@ -50,79 +57,97 @@
 
       <section class="salones">
         <div class="container my-5">
-        <h2 class="container my-1">Explorá salones disponibles cerca tuyo</h2>
-        <h3 class="container my-1">Compará y encontrá el que mejor se adapta a tu evento</h3>
-        <div class="container my-5">
+          <h2 class="text-center mb-3">Explorá salones disponibles cerca tuyo</h2>
+          <h3 class="text-center mb-5">Compará y encontrá el que mejor se adapta a tu evento</h3>
           <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 mb-4">
-              <div class="salon-card h-100">
+            <!-- Card 1 -->
+            <div class="col-12 col-sm-6 col-lg-4 mb-4">
+              <!--cambios de etiquetas div por etiquetas article-->
+              <article class="card h-100 bg-white">
                 <div class="image-placeholder">
                   <img class="salon-image" src="static/img/salon-de-fiestas-1.jpeg" alt="salón de fiestas">
                 </div>
-                <h4>Isla de aventuras</h4>
-                <p class="price">$100000</p>
-                <p class="capacity">Capacidad 40 personas</p>
-              </div>
+                <div class="card-body">
+                  <h4 class="card-title">Isla de aventuras</h4>
+                  <p class="price">$100000</p>
+                  <p class="capacity">Capacidad 40 personas</p>
+                </div>
+              </article>
             </div>
-            <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <!-- Card 2 -->
+            <div class="col-12 col-sm-6 col-lg-4 mb-4">
               <!--cambios de etiquetas div por etiquetas article-->
-              <article class="salon-card h-100">
+              <article class="card h-100 bg-white">
                 <div class="image-placeholder">
                   <img class="salon-image" src="static/img/salon-de-fiestas-2.jpg" alt="salón de fiestas">
                 </div>
-                <h4>El Castillo</h4>
-                <p class="price">$120000</p>
-                <p class="capacity">Capacidad 30 personas</p>
+                <div class="card-body">
+                  <h4>El Castillo</h4>
+                  <p class="price">$120000</p>
+                  <p class="capacity">Capacidad 30 personas</p>
+                </div>
               </article>
             </div>
-            <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <!-- Card 3 -->
+            <div class="col-12 col-sm-6 col-lg-4 mb-4">
               <!--cambios de etiquetas div por etiquetas article-->
-              <article class="salon-card h-100">
+              <article class="card h-100 bg-white">
                 <div class="image-placeholder">
                   <img class="salon-image" src="static/img/salon-de-fiestas-3.jpg" alt="salón de fiestas">
                 </div>
-                <h4>Aventura mágica</h4>
-                <p class="price">$110000</p>
-                <p class="capacity">Capacidad 35 personas</p>
+                <div class="card-body">
+                  <h4>Aventura mágica</h4>
+                  <p class="price">$110000</p>
+                  <p class="capacity">Capacidad 35 personas</p>
+                </div>
               </article>
             </div>
-            <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <!-- Card 4 -->
+            <div class="col-12 col-sm-6 col-lg-4 mb-4">
               <!--cambios de etiquetas div por etiquetas article-->
-              <article class="salon-card h-100">
+              <article class="card h-100 bg-white">
                 <div class="image-placeholder">
                   <img class="salon-image" src="static/img/salon-de-fiestas-4.jpg" alt="salón de fiestas">
                 </div>
-                <h4>Pequeños gigantes</h4>
-                <p class="price">$95000</p>
-                <p class="capacity">Capacidad 25 personas</p>
+                <div class="card-body">
+                  <h4>Pequeños gigantes</h4>
+                  <p class="price">$95000</p>
+                  <p class="capacity">Capacidad 25 personas</p>
+                </div>
               </article>
             </div>
-            <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <!-- Card 5 -->
+            <div class="col-12 col-sm-6 col-lg-4 mb-4">
               <!--cambios de etiquetas div por etiquetas article-->
-              <article class="salon-card h-100">
+              <article class="card h-100 bg-white">
                 <div class="image-placeholder">
                   <img class="salon-image" src="static/img/salon-de-fiestas-5.jpg" alt="salón de fiestas">
                 </div>
-                <h4>Reino de sueños</h4>
-                <p class="price">$105000</p>
-                <p class="capacity">Capacidad 30 personas</p>
+                <div class="card-body">
+                  <h4>Reino de sueños</h4>
+                  <p class="price">$105000</p>
+                  <p class="capacity">Capacidad 30 personas</p>
+                </div>
               </article>
             </div>
-            <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <!-- Card 6 -->
+            <div class="col-12 col-sm-6 col-lg-4 mb-4">
               <!--cambios de etiquetas div por etiquetas article-->
-              <article class="salon-card h-100">
+              <article class="card h-100 bg-white">
                 <div class="image-placeholder">
                   <img class="salon-image" src="static/img/salon-de-fiestas-6.jpg" alt="salón de fiestas">
                 </div>
-                <h4>Fiestilandia</h4>
-                <p class="price">$99000</p>
-                <p class="capacity">Capacidad 40 personas</p>
+                <div class="card-body">
+                  <h4>Fiestilandia</h4>
+                  <p class="price">$99000</p>
+                  <p class="capacity">Capacidad 40 personas</p>
+                </div>
               </article>
             </div>
           </div>
-        </div>
-        <button class="more-btn">Ver más salones</button>
-        <div style="padding-top: 4rem;"></div>
+          <div class="text-center mt-4">
+            <button class="more-btn btn btn-dark rounded-pill px-4 py-2">Ver más salones</button>
+          </div>
         </div>
       </section>
     </main>
@@ -200,7 +225,7 @@
       <br/>
       <!--cambio de div por section-->
       <section class="copyright">
-        <p>&copy; Copyright. Hecho con ❤️ por IDW S.A. Salones Spider-Kitty. Todos los derechos reservados</p>
+        <p>© Copyright. Hecho con ❤️ por <a href="idw.html">IDW S.A.</a> Salones Spider-Kitty. Todos los derechos reservados</p>
       </section>
       </footer>
       

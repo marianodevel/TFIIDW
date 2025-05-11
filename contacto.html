@@ -2,141 +2,162 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Salones Spider-Kitty | Contacto</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="stylesheet" href="static/styles.css">
-		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Font Awesome para el ícono X del menú -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="static/styles.css" />
+    <!-- Fuente Inter -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 	</head>
 	<body>
 		<header class="header">
-			<!--Cambiamos el contenedor del logo por un h1 para mejorar la accesibilidad y SEO-->
-			<!--se agrego la etiqueta span para que salones quede como texto plano y no forme parate de la estructura-->
-			<h1 class="title-header"><img class="logo-header" src="static/img/spider-kitty.png" alt="spider-kitty"><span>Salones Spider-Kitty</span></h1>
-			<nav class="navbar navbar-expand-lg bg-body-tertiary">
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				  <span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-					  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link active" aria-current="page" href="#">Contactanos</a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link active" aria-current="page" href="#">¿Quiénes somos?</a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link active" aria-current="page" href="#">Iniciar sesión</a> 
-					</li>  
-					<li class="nav-item">
-					  <a class="nav-link active" aria-current="page" href="#">Registrarse</a> 
-					</li>   
-				  </ul>
-				</div>
-			</nav>
-		  </header>
+      <div class="container-fluid">
+        <div class="row d-flex align-items-center">
+          <div class="col-md-4 col-6">
+            <!--Cambiamos el contenedor del logo por un h1 para mejorar la accesibilidad y SEO-->
+            <!--se agregó la etiqueta span para que salones quede como texto plano y no forme parte de la estructura-->
+            <h1 class="title-header d-flex align-items-center gap-2">
+              <img class="logo-header" src="static/img/spider-kitty.png" alt="spider-kitty">
+              <span>Salones Spider-Kitty</span>
+            </h1>
+          </div>
+          <div class="col-md-8 col-6">
+            <nav class="navbar navbar-expand-lg">
+              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-close-icon d-none"><i class="fas fa-times"></i></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="contacto.html">Contactanos</a></li>
+                  <li class="nav-item"><a class="nav-link" href="info.html">¿Quiénes somos?</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Iniciar sesión</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Registrarse</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
 	
-		<main class="main-contacto">
+		<main class="main-contacto container py-5">
 			<!--agrupamos todo en un section que antes no tenia-->
-			<section>
-					<h1>Contactate con nosotros</h1>
-					<h2>¿Tenés dudas? Escribinos y te respondemos enseguida</h2>
-					<form action="">
-					<label for="nombre">Nombre</label>
-					<input id="nombre" type="text" name="nombre" />
-					<label for="apellido">Apellido</label>
-					<input id="apellido" type="text" name="apellido" />
-					<label for="email">Email</label>
-					<input id="email" type="email" name="email" />
-					<label for="mensaje">Mensaje</label>
-					<textarea id="mensaje" name="mensaje"></textarea>
+			<section class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 text-center">
+          <h1 class="mb-3">Contactate con nosotros</h1>
+          <h2 class="mb-4">¿Tenés dudas? Escribinos y te respondemos enseguida</h2>
+          
+          <!-- Formulario de contacto responsive -->
+          <form class="bg-white p-4 rounded shadow-sm mx-auto" style="max-width: 500px;">
+            <div class="mb-3 text-start">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input id="nombre" type="text" name="nombre" class="form-control" />
+            </div>
+            
+            <div class="mb-3 text-start">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input id="apellido" type="text" name="apellido" class="form-control" />
+            </div>
+            
+            <div class="mb-3 text-start">
+              <label for="email" class="form-label">Email</label>
+              <input id="email" type="email" name="email" class="form-control" />
+            </div>
+            
+            <div class="mb-3 text-start">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" class="form-control" rows="4"></textarea>
+            </div>
 
-					<input type="submit" value="Enviar" />
-					</form>
+            <button type="submit" class="btn btn-dark w-100">Enviar</button>
+          </form>
+        </div>
 			</section>
-			
 		</main>
 
-		<footer class="footer">
-		<!--cambio de div por section-->	
-		<section class="footer-columns">
-		  <!--cambio de div por article-->	
-		  <article class="footer-col logo-social">
-			<img class="footer-logo" src="static/img/spider-kitty.png" alt="Logo" />
-			<div class="social-icons">
-			  <img class="redes-icons" src="static/img/x-icon.png" alt="X" />
-			  <img class="redes-icons" src="static/img/instagram-icon.png" alt="Instagram" />
-			  <img class="redes-icons" src="static/img/facebook-icon.png" alt="Facebook" />
-			  <img class="redes-icons" src="static/img/linkedin-icon.png" alt="LinkedIn" />
-			</div>
-		  </article>
-	  
-		  <!--cambio de div por section-->
-		  <section class="footer-col">
-			<h4>Enlaces útiles</h4>
-			<ul>
-			  <li>Inicio</li>
-			  <li>Contactanos</li>
-			  <li>¿Quiénes somos?</li>
-			  <li>Nuestros salones</li>
-			  <li>¿Tenés cuenta? Iniciar sesión</li>
-			  <li>¿Sos nuevo? Registrarse</li>
-			  <li>Reservas disponibles</li>
-			</ul>
-		  </section>
-	  
-		  <!--cambio de div por section-->
-		  <section class="footer-col">
-			<h4>Ayuda</h4>
-			<ul>
-			  <li>Preguntas frecuentes</li>
-			  <li>Términos y condiciones</li>
-			  <li>Política de privacidad</li>
-			  <li>Centro de ayuda</li>
-			  <li>Guía para tu evento</li>
-			  <li>Cómo reservar</li>
-			  <li>Cancelaciones y reembolsos</li>
-			</ul>
-		  </section>
-	  
-		  <!--cambio de div por section-->
-		  <section class="footer-col">
-			<h4>Redes sociales</h4>
-			<ul>
-			  <li>Facebook</li>
-			  <li>Instagram</li>
-			  <li>Pinterest</li>
-			  <li>TikTok</li>
-			  <li>Discord</li>
-			  <li>LinkedIn</li>
-			</ul>
-		  </section>
-		</section>
-	  
-		<!--cambio de div por section-->
-		<section class="medios-pago">
-		  <h2>Medios de pago</h2>
-		  <div class="logos-pago">
-			<img src="static/img/mercado-pago.png" alt="Mercado Pago" />
-			<img src="static/img/visa-logo.png" alt="Visa" />
-			<img src="static/img/mastercard-logo.png" alt="Mastercard" />
-			<img src="static/img/american-express-logo.png" alt="American Express" />
-			<img src="static/img/pago-facil-logo.png" alt="Pago Fácil" />
-			<img src="static/img/rapipago-logo.png" alt="Rapipago" />
-		  </div>
-		</section>
-		<br/>
-		<hr/>
-		<br/>
-		<!--cambio de div por section-->
-		<section class="copyright">
-			<p>&copy; Copyright. Hecho con ❤️ por IDW S.A. Salones Spider-Kitty. Todos los derechos reservados</p>
-		</section>
-	  </footer>
-	  
-  </body>
-</html>
+	 <footer class="footer">
+      <!--cambio de div por section-->	
+      <section class="footer-columns">
+        <!--cambio de div por article-->	
+        <article class="footer-col logo-social">
+        <img class="footer-logo" src="static/img/spider-kitty.png" alt="Logo" />
+        <div class="social-icons">
+          <img class="redes-icons" src="static/img/x-icon.png" alt="X" />
+          <img class="redes-icons" src="static/img/instagram-icon.png" alt="Instagram" />
+          <img class="redes-icons" src="static/img/facebook-icon.png" alt="Facebook" />
+          <img class="redes-icons" src="static/img/linkedin-icon.png" alt="LinkedIn" />
+        </div>
+        </article>
+      
+        <!--cambio de div por section-->
+        <section class="footer-col">
+        <h4>Enlaces útiles</h4>
+        <ul>
+          <li>Inicio</li>
+          <li>Contactanos</li>
+          <li>¿Quiénes somos?</li>
+          <li>Nuestros salones</li>
+          <li>¿Tenés cuenta? Iniciar sesión</li>
+          <li>¿Sos nuevo? Registrarse</li>
+          <li>Reservas disponibles</li>
+        </ul>
+        </section>
+      
+        <!--cambio de div por section-->
+        <section class="footer-col">
+        <h4>Ayuda</h4>
+        <ul>
+          <li>Preguntas frecuentes</li>
+          <li>Términos y condiciones</li>
+          <li>Política de privacidad</li>
+          <li>Centro de ayuda</li>
+          <li>Guía para tu evento</li>
+          <li>Cómo reservar</li>
+          <li>Cancelaciones y reembolsos</li>
+        </ul>
+        </section>
+      
+        <!--cambio de div por section-->
+        <section class="footer-col">
+        <h4>Redes sociales</h4>
+        <ul>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Pinterest</li>
+          <li>TikTok</li>
+          <li>Discord</li>
+          <li>LinkedIn</li>
+        </ul>
+        </section>
+      </section>
+      
+      <!--cambio de div por section-->
+      <section class="medios-pago">
+        <h2>Medios de pago</h2>
+        <div class="logos-pago">
+        <img src="static/img/mercado-pago.png" alt="Mercado Pago" />
+        <img src="static/img/visa-logo.png" alt="Visa" />
+        <img src="static/img/mastercard-logo.png" alt="Mastercard" />
+        <img src="static/img/american-express-logo.png" alt="American Express" />
+        <img src="static/img/pago-facil-logo.png" alt="Pago Fácil" />
+        <img src="static/img/rapipago-logo.png" alt="Rapipago" />
+        </div>
+      </section>
+      <br/>
+      <hr/>
+      <br/>
+      <!--cambio de div por section-->
+      <section class="copyright">
+        <p>© Copyright. Hecho con ❤️ por <a href="idw.html">IDW S.A.</a> Salones Spider-Kitty. Todos los derechos reservados</p>
+      </section>
+      </footer>
+      
+    </body>
+  </html>
+  
