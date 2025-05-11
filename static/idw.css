@@ -1,7 +1,7 @@
  :root {
-            --primary-color: #a268ff;
-            --secondary-color: #540297;
-            --accent-color: #e73ce4;
+            --primary-color: #68d2ff;
+            --secondary-color: #3f008c;
+            --accent-color: #9015fb;
             --light-color: #ecf0f1;
             --dark-color: #2c3e50;
         }
@@ -14,12 +14,11 @@
         }
         
         body {
-            background-image: linear-gradient(to right, #e1bdf6, #dac6fa, #d5cdfb, #d3d5fb, #d3dbf9, #d3dbf9, #d3dbf9, #d3dbf9, #d3d5fb, #d5cdfb, #dac6fa, #e1bdf6);            color: var(--dark-color);
-            line-height: 1.6;
+background-image: linear-gradient(to right, #68d2ff, #97d8ff, #bbdfff, #d7e7ff, #ecf0ff, #ecf0ff, #ecf0ff, #ecf0ff, #d7e7ff, #bbdfff, #97d8ff, #68d2ff);            line-height: 1.6;
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--primary-color));
             color: white;
             padding: 2rem 0;
             text-align: center;
@@ -97,18 +96,23 @@
         .btn {
             display: inline-block;
             background-color: var(--primary-color);
-            color: white;
+            color: var(--secondary-color);
             padding: 0.8rem 1.5rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
+            font-size: larger;
             transition: all 0.3s;
+            border: 3px double var(--secondary-color);
         }
         
         .btn:hover {
             background-color: var(--secondary-color);
+            color: var(--primary-color);
             transform: translateY(-3px);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border: 3px double var(--primary-color);
+
         }
         
         .section-title {
@@ -254,7 +258,7 @@
         input, textarea {
             width: 100%;
             padding: 0.8rem;
-            border: 1px solid #ddd;
+            border: 2px solid var(--primary-color);
             border-radius: 4px;
             font-size: 1rem;
         }
@@ -266,20 +270,23 @@
         
         .btn-submit {
             background-color: var(--primary-color);
-            color: white;
+            color: var(--secondary-color);
             border: none;
             padding: 0.8rem 2rem;
             border-radius: 30px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: larger;
             font-weight: bold;
             transition: all 0.3s;
+            border: 3px double var(--secondary-color);
         }
         
         .btn-submit:hover {
             background-color: var(--secondary-color);
+            color: var(--primary-color);
             transform: translateY(-3px);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border: 3px double var(--primary-color);
         }
         
         footer {
