@@ -254,7 +254,7 @@ nav li:hover {
 
    .custom-form {
       max-width: 100%;
-      width: 800px;
+      min-width: 800px;
       margin: 0 auto;
       padding: 2rem;
       border: 1px solid #e0e0e0;
