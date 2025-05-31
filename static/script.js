@@ -24,42 +24,34 @@ if (storageAvailable("localStorage")) {
   // Too bad, no localStorage for us
 }
 */
+const primeraVisita = () => {
+  if (localStorage.getItem("salones")) {
+    console.log("Los datos ya están cargados");
+    return false; // No es primera visita
+  }
+  return true; // Sí es primera visita
+};
 
-const primeraVisita() => {
-	if (localStorage.getItem('salones') {
-		console.log('Los datos de salones se encuentran previamente cargados');
-		return false;
-	} else {
-		llenarLocalStorage();
-		return true;
-	}
-}
-
-const llenarLocalStorage async() => {
-	try {
-		const response = await fetch('./data/salones.json');
-		if (!response.ok) {
-			throw new Error(`Error al cargar los salones: ${response.status}`);
-		}
-		const data = await response.json();
-		if (!data.salones ||| !Array.isArray(data.salones)) {
-			throw new Error('Formato invalido');
-		}
-		localStorage.setItem('salones', JSON.stringify(data.salones)); // revisar si no va en formato JSON
-	} catch (error) {
-		console.error('Error en localStorage:', error);
-	}
-}
+const llenarLocalStorage = async () => {
+  try {
+    const response = await fetch("./data/salones.json");
+    if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+    const data = await response.json();
+    if (!data.salones || !Array.isArray(data.salones))
+      throw new Error("Formato inválido");
+    localStorage.setItem("salones", JSON.stringify(data.salones));
+  } catch (error) {
+    console.error("Error:", error);
+  }
+};
 
 async function iniciarApp() {
-	const inicializado = primeraVisita();
-	if (!inicializado) {
-		await llenarLocalStorage();
-	}
-	const salones = JSON.parse(localStorage.getItem('salones'));
-	console.log('Salones: ', salones);
+  if (primeraVisita()) {
+    // Solo si es primera visita
+    await llenarLocalStorage();
+  }
+  const salones = JSON.parse(localStorage.getItem("salones"));
+  console.log("Salones:", salones);
 }
 
 iniciarApp();
-
-
