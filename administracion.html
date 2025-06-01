@@ -1,6 +1,4 @@
 <!doctype html>
-<!-- index.html actualizado con Bootstrap, etiquetas semánticas y cards fijas -->
-<!-- Comentarios originales conservados -->
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -33,11 +31,9 @@
   </head>
   <body>
     <header class="header">
-      <!--Cambiamos el contenedor del logo por un h1 para mejorar la accesibilidad y SEO-->
       <div class="container-fluid">
         <div class="row d-flex align-items-center">
           <div class="col-md-4 col-6">
-            <!--se agregó la etiqueta span para que salones quede como texto plano y no forme parte de la estructura-->
             <h1 class="title-header d-flex align-items-center gap-2">
               <img
                 class="logo-header"
@@ -92,7 +88,7 @@
         </div>
       </div>
     </header>
-    <!-- Reemplaza el contenido de <main> en administracion.html con esto: -->
+
     <main class="container my-5">
       <h1 class="mb-4">Panel de Administración</h1>
 
@@ -110,6 +106,7 @@
                   <th scope="col">Precio</th>
                   <th scope="col">Capacidad</th>
                   <th scope="col">Imagen</th>
+                  <th scope="col">Acciones</th>
                 </tr>
               </thead>
               <tbody id="tablaSalones">
@@ -121,12 +118,98 @@
       </div>
     </main>
 
-    <!-- Agrega este script al final del body -->
-    <script src="static/administracion.js"></script>
+    <!-- Modal para agregar/editar salones -->
+    <div class="modal fade" id="salonModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="modalTitle">Nuevo Salón</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formSalon" class="row g-3">
+              <input type="hidden" id="salonId" />
+
+              <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre del Salón*</label>
+                <input type="text" class="form-control" id="nombre" required />
+              </div>
+
+              <div class="col-md-6">
+                <label for="precio" class="form-label">Precio ($)*</label>
+                <div class="input-group">
+                  <span class="input-group-text">$</span>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="precio"
+                    min="0"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="capacidad" class="form-label"
+                  >Capacidad (personas)*</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="capacidad"
+                  min="1"
+                  required
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="imagen" class="form-label">Imagen*</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="imagen"
+                  accept="image/*"
+                  required
+                />
+                <small class="text-muted"
+                  >Formatos aceptados: JPG, PNG, GIF</small
+                >
+                <div id="imagenPreview" class="mt-2" style="display: none">
+                  <img
+                    id="preview"
+                    src="#"
+                    alt="Vista previa"
+                    class="img-thumbnail"
+                    style="max-height: 150px"
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary me-2">
+                  <i class="fas fa-save me-1"></i> Guardar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  <i class="fas fa-times me-1"></i> Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer class="footer">
-      <!--cambio de div por section-->
       <section class="footer-columns">
-        <!--cambio de div por article-->
         <article class="footer-col logo-social">
           <img
             class="footer-logo"
@@ -152,7 +235,6 @@
             />
           </div>
         </article>
-        <!--cambio de div por section-->
         <section class="footer-col">
           <h4>Enlaces útiles</h4>
           <ul>
@@ -165,7 +247,6 @@
             <li>Reservas disponibles</li>
           </ul>
         </section>
-        <!--cambio de div por section-->
         <section class="footer-col">
           <h4>Ayuda</h4>
           <ul>
@@ -178,7 +259,6 @@
             <li>Cancelaciones y reembolsos</li>
           </ul>
         </section>
-        <!--cambio de div por section-->
         <section class="footer-col">
           <h4>Redes sociales</h4>
           <ul>
@@ -191,7 +271,6 @@
           </ul>
         </section>
       </section>
-      <!--cambio de div por section-->
       <section class="medios-pago">
         <h2>Medios de pago</h2>
         <div class="logos-pago">
@@ -209,15 +288,14 @@
       <br />
       <hr />
       <br />
-      <!--cambio de div por section-->
       <section class="copyright">
-        <!--el link "idw.html" redirige a la landing page de la empresa desarrolladora del sitio-->
         <p>
           © Copyright. Hecho con ❤️ por <a href="idw.html">IDW S.A.</a> Salones
           Spider-Kitty. Todos los derechos reservados
         </p>
       </section>
     </footer>
+
     <script src="static/administracion.js"></script>
   </body>
 </html>
