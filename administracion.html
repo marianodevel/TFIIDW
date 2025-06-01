@@ -92,9 +92,37 @@
         </div>
       </div>
     </header>
-    <main>
-      <div id="panel">PANEL DE ADMINISTRACION</div>
+    <!-- Reemplaza el contenido de <main> en administracion.html con esto: -->
+    <main class="container my-5">
+      <h1 class="mb-4">Panel de Administración</h1>
+
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h2 class="mb-0">Listado de Salones</h2>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Capacidad</th>
+                  <th scope="col">Imagen</th>
+                </tr>
+              </thead>
+              <tbody id="tablaSalones">
+                <!-- Los datos se cargarán aquí -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </main>
+
+    <!-- Agrega este script al final del body -->
+    <script src="static/administracion.js"></script>
     <footer class="footer">
       <!--cambio de div por section-->
       <section class="footer-columns">
@@ -190,5 +218,6 @@
         </p>
       </section>
     </footer>
+    <script src="static/administracion.js"></script>
   </body>
 </html>

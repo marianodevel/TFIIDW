@@ -1,35 +1,10 @@
-/*
-function storageAvailable(type) {
-  let storage;
-  try {
-    storage = window[type];
-    const x = "__storage_test__";
-    storage.setItem(x, x);
-    storage.removeItem(x);
-    return true;
-  } catch (e) {
-    return (
-      e instanceof DOMException &&
-      e.name === "QuotaExceededError" &&
-      // acknowledge QuotaExceededError only if there's something already stored
-      storage &&
-      storage.length !== 0
-    );
-  }
-}
-
-if (storageAvailable("localStorage")) {
-  // Yippee! We can use localStorage awesomeness
-} else {
-  // Too bad, no localStorage for us
-}
-*/
+// script.js (versión actualizada)
 const primeraVisita = () => {
   if (localStorage.getItem("salones")) {
     console.log("Los datos ya están cargados");
-    return false; // No es primera visita
+    return false;
   }
-  return true; // Sí es primera visita
+  return true;
 };
 
 const llenarLocalStorage = async () => {
@@ -45,13 +20,40 @@ const llenarLocalStorage = async () => {
   }
 };
 
+const renderizarCatalogo = () => {
+  const salones = JSON.parse(localStorage.getItem("salones")) || [];
+  const catalogoContainer = document.getElementById("catalogoSalones");
+
+  if (catalogoContainer && salones.length > 0) {
+    catalogoContainer.innerHTML = salones
+      .map(
+        (salon) => `
+      <div class="col-12 col-sm-6 col-lg-4 mb-4">
+        <article class="card h-100 w-80 bg-white">
+          <div class="image-placeholder">
+            <img class="salon-image" src="${salon.imagen}" alt="${salon.nombre}">
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">${salon.nombre}</h4>
+            <p class="price">$${salon.precio.toLocaleString("es-AR")}</p>
+            <p class="capacity">Capacidad ${salon.capacidad} personas</p>
+          </div>
+        </article>
+      </div>
+    `,
+      )
+      .join("");
+  } else if (catalogoContainer) {
+    catalogoContainer.innerHTML =
+      '<p class="text-center">No hay salones disponibles</p>';
+  }
+};
+
 async function iniciarApp() {
   if (primeraVisita()) {
-    // Solo si es primera visita
     await llenarLocalStorage();
   }
-  const salones = JSON.parse(localStorage.getItem("salones"));
-  console.log("Salones:", salones);
+  renderizarCatalogo();
 }
 
-iniciarApp();
+document.addEventListener("DOMContentLoaded", iniciarApp);
