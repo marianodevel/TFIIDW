@@ -5,42 +5,42 @@
       "nombre": "Isla de aventuras",
       "imagen": "static/img/salon-de-fiestas-1.jpeg",
       "precio": 100000,
-      "capacidad": "40 personas"
+      "capacidad": "40 "
     },
     {
       "id": "salon2",
       "nombre": "El Castillo",
       "imagen": "static/img/salon-de-fiestas-2.jpg",
       "precio": 120000,
-      "capacidad": "30 personas"
+      "capacidad": "30 "
     },
     {
       "id": "salon3",
       "nombre": "Aventura mágica",
       "imagen": "static/img/salon-de-fiestas-3.jpg",
       "precio": 110000,
-      "capacidad": "35 personas"
+      "capacidad": "35 "
     },
     {
       "id": "salon4",
       "nombre": "Pequeños gigantes",
       "imagen": "static/img/salon-de-fiestas-4.jpg",
       "precio": 95000,
-      "capacidad": "25 personas"
+      "capacidad": "25 "
     },
     {
       "id": "salon5",
       "nombre": "Reino de sueños",
       "imagen": "static/img/salon-de-fiestas-5.jpg",
       "precio": 105000,
-      "capacidad": "30 personas"
+      "capacidad": "30 "
     },
     {
       "id": "salon6",
       "nombre": "Fiestilandia",
       "imagen": "static/img/salon-de-fiestas-6.jpg",
       "precio": 99000,
-      "capacidad": "40 personas"
+      "capacidad": "40 "
     }
   ]
 }

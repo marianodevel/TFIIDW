@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Configurar eventos
   function setupEventListeners() {
-    // Botón para nuevo salón
+    // Botón para nuevo salón (verificar si ya existe)
     const header = document.querySelector(".card-header");
     if (!document.getElementById("btnNuevoSalon")) {
       const btnNuevo = document.createElement("button");
@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
         modalTitle.textContent = "Nuevo Salón";
         formSalon.reset();
         imagenPreview.style.display = "none";
-        imagenInput.required = true;
         salonModal.show();
       });
       header.appendChild(btnNuevo);
@@ -36,24 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Vista previa de imagen
     imagenInput.addEventListener("change", function (e) {
       if (this.files && this.files[0]) {
-        const file = this.files[0];
-        const validTypes = ["image/jpeg", "image/png", "image/gif"];
-
-        if (!validTypes.includes(file.type)) {
-          mostrarAlerta(
-            "Formato de imagen no válido. Use JPG, PNG o GIF.",
-            "danger",
-          );
-          this.value = "";
-          return;
-        }
-
         const reader = new FileReader();
         reader.onload = function (e) {
           preview.src = e.target.result;
           imagenPreview.style.display = "block";
         };
-        reader.readAsDataURL(file);
+        reader.readAsDataURL(this.files[0]);
       }
     });
 
@@ -66,33 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Guardar o actualizar salón
   function guardarSalon() {
-    const nombre = document.getElementById("nombre").value.trim();
+    const nombre = document.getElementById("nombre").value;
     const precio = parseInt(document.getElementById("precio").value);
     const capacidad = parseInt(document.getElementById("capacidad").value);
     const imagenFile = imagenInput.files[0];
 
-    // Validaciones
-    if (!nombre || isNaN(precio) || isNaN(capacidad)) {
+    if (
+      !nombre ||
+      isNaN(precio) ||
+      isNaN(capacidad) ||
+      (!imagenFile && !editMode)
+    ) {
       mostrarAlerta("Por favor complete todos los campos requeridos", "danger");
       return;
     }
 
-    if (precio <= 0) {
-      mostrarAlerta("El precio debe ser mayor que cero", "danger");
-      return;
-    }
-
-    if (capacidad <= 0) {
-      mostrarAlerta("La capacidad debe ser mayor que cero", "danger");
-      return;
-    }
-
-    if (!editMode && !imagenFile) {
-      mostrarAlerta("Debe seleccionar una imagen", "danger");
-      return;
-    }
-
-    // Para producción real, aquí deberías subir la imagen a un servidor
     const imagen =
       editMode && !imagenFile
         ? salones[currentEditIndex].imagen
@@ -119,42 +94,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (salones.length === 0) {
       tablaBody.innerHTML = `
-        <tr>
-          <td colspan="6" class="text-center py-4 text-muted">
-            <i class="fas fa-exclamation-circle me-2"></i>
-            No hay salones registrados
-          </td>
-        </tr>
-      `;
+      <tr>
+        <td colspan="6" class="text-center py-4 text-muted">
+          <i class="fas fa-exclamation-circle me-2"></i>
+          No hay salones registrados
+        </td>
+      </tr>
+    `;
       return;
     }
 
     salones.forEach((salon, index) => {
       const row = document.createElement("tr");
       row.innerHTML = `
-        <th scope="row">${index + 1}</th>
-        <td>${salon.nombre}</td>
-        <td>$${salon.precio.toLocaleString("es-AR")}</td>
-        <td>${salon.capacidad}</td>
-        <td>
-          <img src="${salon.imagen}" alt="${salon.nombre}" 
-               class="img-thumbnail" style="width: 80px; height: 60px; object-fit: cover;">
-        </td>
-        <td>
-          <div class="d-flex gap-2">
-            <button class="btn btn-sm btn-warning" onclick="editarSalon(${index})">
-              <i class="fas fa-edit"></i>
-            </button>
-            <button class="btn btn-sm btn-danger" onclick="eliminarSalon(${index})">
-              <i class="fas fa-trash"></i>
-            </button>
-          </div>
-        </td>
-      `;
+      <th scope="row">${index + 1}</th>
+      <td>${salon.nombre}</td>
+      <td>$${salon.precio.toLocaleString("es-AR")}</td>
+      <td>${salon.capacidad}</td> 
+      <td>
+        <img src="${salon.imagen}" alt="${salon.nombre}" 
+             class="img-thumbnail" style="width: 80px; height: 60px; object-fit: cover;">
+      </td>
+      <td>
+        <div class="d-flex gap-2">
+          <button class="btn btn-sm btn-warning" onclick="editarSalon(${index})">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button class="btn btn-sm btn-danger" onclick="eliminarSalon(${index})">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      </td>
+    `;
       tablaBody.appendChild(row);
     });
   }
-
   // Funciones globales para los botones
   window.editarSalon = (index) => {
     editMode = true;
@@ -183,10 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function mostrarAlerta(mensaje, tipo) {
-    // Eliminar alertas existentes primero
-    const alertasExistentes = document.querySelectorAll(".alert");
-    alertasExistentes.forEach((alerta) => alerta.remove());
-
     const alerta = document.createElement("div");
     alerta.className = `alert alert-${tipo} alert-dismissible fade show position-fixed top-0 end-0 m-3`;
     alerta.innerHTML = `
