@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <th scope="row">${index + 1}</th>
         <td>${salon.nombre}</td>
         <td>$${salon.precio.toLocaleString("es-AR")}</td>
-        <td>${salon.capacidad} personas</td>
+        <td>${salon.capacidad}</td>
         <td>
           <img src="${salon.imagen}" alt="${salon.nombre}" 
                class="img-thumbnail" style="width: 80px; height: 60px; object-fit: cover;">
