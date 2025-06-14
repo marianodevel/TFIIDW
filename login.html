@@ -1,28 +1,21 @@
 <!doctype html>
-<!-- index.html actualizado con Bootstrap, etiquetas semánticas y cards fijas -->
-<!-- Comentarios originales conservados -->
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Salones Spider-Kitty</title>
+    <title>Iniciar Sesión - Salones Spider-Kitty</title>
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       crossorigin="anonymous"
     />
-    <!-- Font Awesome para el ícono X del menú -->
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-      crossorigin="anonymous"
-    ></script>
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="static/styles.css" />
     <!-- Fuente Inter -->
@@ -33,11 +26,9 @@
   </head>
   <body>
     <header class="header">
-      <!--Cambiamos el contenedor del logo por un h1 para mejorar la accesibilidad y SEO-->
       <div class="container-fluid">
         <div class="row d-flex align-items-center">
           <div class="col-md-4 col-6">
-            <!--se agregó la etiqueta span para que salones quede como texto plano y no forme parte de la estructura-->
             <h1 class="title-header d-flex align-items-center gap-2">
               <img
                 class="logo-header"
@@ -65,25 +56,27 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                  <li class="nav-item" id="home">
-                    <a
-                      class="nav-link active"
-                      aria-current="page"
-                      href="index.html"
-                      >Inicio</a
-                    >
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
                   </li>
-                  <li class="nav-item" id="contacto">
+                  <li class="nav-item">
                     <a class="nav-link" href="contacto.html">Contactanos</a>
                   </li>
-                  <li class="nav-item" id="info">
+                  <li class="nav-item">
                     <a class="nav-link" href="info.html">¿Quiénes somos?</a>
                   </li>
-                  <li class="nav-item" id="iniciar_sesion">
-                    <a class="nav-link" href="#">Iniciar sesión</a>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"
+                      >Iniciar sesión</a
+                    >
                   </li>
-                  <li class="nav-item" id="registrarse">
+                  <li class="nav-item">
                     <a class="nav-link" href="#">Registrarse</a>
+                  </li>
+                  <li class="nav-item" id="administracion">
+                    <a class="nav-link" href="administracion.html"
+                      >Administracion</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -92,142 +85,42 @@
         </div>
       </div>
     </header>
-    <main>
-      <section class="hero">
-        <h1>Encontrá el salón ideal<br />para tu evento</h1>
-        <h2>
-          Descubrí salones pensados para<br />que cada celebración sea única
-        </h2>
-        <button>Consultar salones</button>
-      </section>
-      <section class="salones">
-        <div class="container my-5">
-          <h2 class="text-left mb-3">Explorá salones disponibles cerca tuyo</h2>
-          <h4 class="text-left mb-5">
-            Compará y encontrá el que mejor se adapta a tu evento
-          </h4>
-          <div class="row">
-            <!-- Card 1 -->
-            <div class="col-12 col-sm-6 col-lg-4 mb-4">
-              <!--cambios de etiquetas div por etiquetas article-->
-              <article class="card h-100 w-80 bg-white">
-                <div class="image-placeholder">
-                  <img
-                    class="salon-image"
-                    src="static/img/salon-de-fiestas-1.jpeg"
-                    alt="salón de fiestas"
-                  />
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Isla de aventuras</h4>
-                  <p class="price">$100000</p>
-                  <p class="capacity">Capacidad 40 personas</p>
-                </div>
-              </article>
-            </div>
-            <!-- Card 2 -->
-            <div class="col-12 col-sm-6 col-lg-4 mb-4">
-              <!--cambios de etiquetas div por etiquetas article-->
-              <article class="card h-100 w-80 bg-white">
-                <div class="image-placeholder">
-                  <img
-                    class="salon-image"
-                    src="static/img/salon-de-fiestas-2.jpg"
-                    alt="salón de fiestas"
-                  />
-                </div>
-                <div class="card-body">
-                  <h4>El Castillo</h4>
-                  <p class="price">$120000</p>
-                  <p class="capacity">Capacidad 30 personas</p>
-                </div>
-              </article>
-            </div>
-            <!-- Card 3 -->
-            <div class="col-12 col-sm-6 col-lg-4 mb-4">
-              <!--cambios de etiquetas div por etiquetas article-->
-              <article class="card h-100 w-80 bg-white">
-                <div class="image-placeholder">
-                  <img
-                    class="salon-image"
-                    src="static/img/salon-de-fiestas-3.jpg"
-                    alt="salón de fiestas"
-                  />
-                </div>
-                <div class="card-body">
-                  <h4>Aventura mágica</h4>
-                  <p class="price">$110000</p>
-                  <p class="capacity">Capacidad 35 personas</p>
-                </div>
-              </article>
-            </div>
-            <!-- Card 4 -->
-            <div class="col-12 col-sm-6 col-lg-4 mb-4">
-              <!--cambios de etiquetas div por etiquetas article-->
-              <article class="card h-100 w-80 bg-white">
-                <div class="image-placeholder">
-                  <img
-                    class="salon-image"
-                    src="static/img/salon-de-fiestas-4.jpg"
-                    alt="salón de fiestas"
-                  />
-                </div>
-                <div class="card-body">
-                  <h4>Pequeños gigantes</h4>
-                  <p class="price">$95000</p>
-                  <p class="capacity">Capacidad 25 personas</p>
-                </div>
-              </article>
-            </div>
-            <!-- Card 5 -->
-            <div class="col-12 col-sm-6 col-lg-4 mb-4">
-              <!--cambios de etiquetas div por etiquetas article-->
-              <article class="card h-100 w-80 bg-white">
-                <div class="image-placeholder">
-                  <img
-                    class="salon-image"
-                    src="static/img/salon-de-fiestas-5.jpg"
-                    alt="salón de fiestas"
-                  />
-                </div>
-                <div class="card-body">
-                  <h4>Reino de sueños</h4>
-                  <p class="price">$105000</p>
-                  <p class="capacity">Capacidad 30 personas</p>
-                </div>
-              </article>
-            </div>
-            <!-- Card 6 -->
-            <div class="col-12 col-sm-6 col-lg-4 mb-4">
-              <!--cambios de etiquetas div por etiquetas article-->
-              <article class="card h-100 w-80 bg-white">
-                <div class="image-placeholder">
-                  <img
-                    class="salon-image"
-                    src="static/img/salon-de-fiestas-6.jpg"
-                    alt="salón de fiestas"
-                  />
-                </div>
-                <div class="card-body">
-                  <h4>Fiestilandia</h4>
-                  <p class="price">$99000</p>
-                  <p class="capacity">Capacidad 40 personas</p>
-                </div>
-              </article>
-            </div>
+
+    <main class="main-contacto container py-5">
+      <div class="col-lg-6 text-center mx-auto">
+        <h1 class="mb-3">Iniciar Sesión</h1>
+        <h2 class="mb-4">Accedé a tu cuenta para gestionar tus reservas</h2>
+        <form id="loginForm">
+          <div class="mb-3 text-start">
+            <label for="username" class="form-label mt-4">Usuario</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="Ingresa tu usuario"
+              required
+            />
           </div>
-          <div class="text-center mt-4">
-            <button class="more-btn btn btn-dark rounded-pill px-4 py-2">
-              Ver más salones
-            </button>
+          <div class="mb-3 text-start">
+            <label for="password" class="form-label mt-4">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Ingresa tu contraseña"
+              required
+            />
           </div>
-        </div>
-      </section>
+          <div class="mb-3 mt-3">
+            <button type="submit" class="btn btn-primary w-60">Ingresar</button>
+          </div>
+          <div id="loginError" class="alert alert-danger mt-3 d-none"></div>
+        </form>
+      </div>
     </main>
+
     <footer class="footer">
-      <!--cambio de div por section-->
       <section class="footer-columns">
-        <!--cambio de div por article-->
         <article class="footer-col logo-social">
           <img
             class="footer-logo"
@@ -253,46 +146,25 @@
             />
           </div>
         </article>
-        <!--cambio de div por section-->
         <section class="footer-col">
           <h4>Enlaces útiles</h4>
           <ul>
-            <li>Inicio</li>
-            <li>Contactanos</li>
-            <li>¿Quiénes somos?</li>
-            <li>Nuestros salones</li>
-            <li>¿Tenés cuenta? Iniciar sesión</li>
-            <li>¿Sos nuevo? Registrarse</li>
-            <li>Reservas disponibles</li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="contacto.html">Contactanos</a></li>
+            <li><a href="info.html">¿Quiénes somos?</a></li>
+            <li>Iniciar sesión</li>
+            <li>Registrarse</li>
           </ul>
         </section>
-        <!--cambio de div por section-->
         <section class="footer-col">
           <h4>Ayuda</h4>
           <ul>
             <li>Preguntas frecuentes</li>
             <li>Términos y condiciones</li>
             <li>Política de privacidad</li>
-            <li>Centro de ayuda</li>
-            <li>Guía para tu evento</li>
-            <li>Cómo reservar</li>
-            <li>Cancelaciones y reembolsos</li>
-          </ul>
-        </section>
-        <!--cambio de div por section-->
-        <section class="footer-col">
-          <h4>Redes sociales</h4>
-          <ul>
-            <li>Facebook</li>
-            <li>Instagram</li>
-            <li>Pinterest</li>
-            <li>TikTok</li>
-            <li>Discord</li>
-            <li>LinkedIn</li>
           </ul>
         </section>
       </section>
-      <!--cambio de div por section-->
       <section class="medios-pago">
         <h2>Medios de pago</h2>
         <div class="logos-pago">
@@ -310,14 +182,22 @@
       <br />
       <hr />
       <br />
-      <!--cambio de div por section-->
       <section class="copyright">
-        <!--el link "idw.html" redirige a la landing page de la empresa desarrolladora del sitio-->
         <p>
           © Copyright. Hecho con ❤️ por <a href="idw.html">IDW S.A.</a> Salones
           Spider-Kitty. Todos los derechos reservados
         </p>
       </section>
     </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Script de autenticación -->
+    <script src="/static/auth.js"></script>
   </body>
 </html>
