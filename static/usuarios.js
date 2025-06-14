@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <th scope="row">${index + 1}</th>
                     <td>${user.username}</td>
                     <td>${user.firstName} ${user.lastName}</td>
+                    <td>${user.email}</td>
                 </tr>
             `,
         )
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else {
       tablaUsuarios.innerHTML = `
                 <tr>
-                    <td colspan="3" class="text-center py-4 text-muted">
+                    <td colspan="4" class="text-center py-4 text-muted">
                         <i class="fas fa-exclamation-circle me-2"></i>
                         No se encontraron usuarios
                     </td>
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error:", error);
     document.getElementById("tablaUsuarios").innerHTML = `
             <tr>
-                <td colspan="3" class="text-center py-4 text-danger">
+                <td colspan="4" class="text-center py-4 text-danger">
                     <i class="fas fa-times-circle me-2"></i>
                     Error al cargar los usuarios
                 </td>
