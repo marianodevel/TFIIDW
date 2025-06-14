@@ -3,24 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Salones Spider-Kitty</title>
+    <title>Panel de Administración - Salones Spider-Kitty</title>
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       crossorigin="anonymous"
     />
-    <!-- Font Awesome para el ícono X del menú -->
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-      crossorigin="anonymous"
-    ></script>
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="static/styles.css" />
     <!-- Fuente Inter -->
@@ -61,29 +56,21 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                  <li class="nav-item" id="home">
-                    <a
-                      class="nav-link active"
-                      aria-current="page"
-                      href="index.html"
-                      >Inicio</a
-                    >
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
                   </li>
-                  <li class="nav-item" id="contacto">
+                  <li class="nav-item">
                     <a class="nav-link" href="contacto.html">Contactanos</a>
                   </li>
-                  <li class="nav-item" id="info">
+                  <li class="nav-item">
                     <a class="nav-link" href="info.html">¿Quiénes somos?</a>
                   </li>
-                  <li class="nav-item" id="iniciar_sesion">
-                    <a class="nav-link" href="#">Iniciar sesión</a>
-                  </li>
-                  <li class="nav-item" id="registrarse">
-                    <a class="nav-link" href="#">Registrarse</a>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html">Iniciar sesión</a>
                   </li>
                   <li class="nav-item" id="administracion">
                     <a class="nav-link" href="administracion.html"
-                      >Administracion</a
+                      >Administración</a
                     >
                   </li>
                 </ul>
@@ -96,10 +83,19 @@
 
     <main class="container my-5">
       <h1 class="mb-4">Panel de Administración</h1>
-
       <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
+        <div class="mb-4">
+          <a href="usuarios.html" class="btn btn-info">
+            <i class="fas fa-users me-1"></i> Ver Usuarios Registrados
+          </a>
+        </div>
+        <div
+          class="card-header bg-primary text-white d-flex justify-content-between align-items-center"
+        >
           <h2 class="mb-0">Listado de Salones</h2>
+          <button id="btnNuevoSalon" class="btn btn-success">
+            <i class="fas fa-plus me-1"></i> Nuevo Salón
+          </button>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -110,13 +106,12 @@
                   <th scope="col">Nombre</th>
                   <th scope="col">Precio</th>
                   <th scope="col">Capacidad</th>
-                  <!-- Cambiado aquí -->
                   <th scope="col">Imagen</th>
                   <th scope="col">Acciones</th>
                 </tr>
               </thead>
               <tbody id="tablaSalones">
-                <!-- Los datos se cargarán aquí -->
+                <!-- Datos se cargarán aquí -->
               </tbody>
             </table>
           </div>
@@ -124,7 +119,7 @@
       </div>
     </main>
 
-    <!-- Modal para agregar/editar salones -->
+    <!-- Modal para salones -->
     <div class="modal fade" id="salonModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -140,12 +135,10 @@
           <div class="modal-body">
             <form id="formSalon" class="row g-3">
               <input type="hidden" id="salonId" />
-
               <div class="col-md-6">
                 <label for="nombre" class="form-label">Nombre del Salón*</label>
                 <input type="text" class="form-control" id="nombre" required />
               </div>
-
               <div class="col-md-6">
                 <label for="precio" class="form-label">Precio ($)*</label>
                 <div class="input-group">
@@ -159,7 +152,6 @@
                   />
                 </div>
               </div>
-
               <div class="col-md-6">
                 <label for="capacidad" class="form-label">Capacidad*</label>
                 <input
@@ -170,7 +162,6 @@
                   required
                 />
               </div>
-
               <div class="col-md-6">
                 <label for="imagen" class="form-label">Imagen*</label>
                 <input
@@ -193,7 +184,6 @@
                   />
                 </div>
               </div>
-
               <div class="col-12">
                 <button type="submit" class="btn btn-primary me-2">
                   <i class="fas fa-save me-1"></i> Guardar
@@ -242,13 +232,10 @@
         <section class="footer-col">
           <h4>Enlaces útiles</h4>
           <ul>
-            <li>Inicio</li>
-            <li>Contactanos</li>
-            <li>¿Quiénes somos?</li>
-            <li>Nuestros salones</li>
-            <li>¿Tenés cuenta? Iniciar sesión</li>
-            <li>¿Sos nuevo? Registrarse</li>
-            <li>Reservas disponibles</li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="contacto.html">Contactanos</a></li>
+            <li><a href="info.html">¿Quiénes somos?</a></li>
+            <li><a href="administracion.html">Administración</a></li>
           </ul>
         </section>
         <section class="footer-col">
@@ -257,21 +244,6 @@
             <li>Preguntas frecuentes</li>
             <li>Términos y condiciones</li>
             <li>Política de privacidad</li>
-            <li>Centro de ayuda</li>
-            <li>Guía para tu evento</li>
-            <li>Cómo reservar</li>
-            <li>Cancelaciones y reembolsos</li>
-          </ul>
-        </section>
-        <section class="footer-col">
-          <h4>Redes sociales</h4>
-          <ul>
-            <li>Facebook</li>
-            <li>Instagram</li>
-            <li>Pinterest</li>
-            <li>TikTok</li>
-            <li>Discord</li>
-            <li>LinkedIn</li>
           </ul>
         </section>
       </section>
@@ -300,6 +272,12 @@
       </section>
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Script de administración -->
     <script src="static/administracion.js"></script>
   </body>
 </html>

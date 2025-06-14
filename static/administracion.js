@@ -1,3 +1,12 @@
+// ===== VERIFICACIÓN DE AUTENTICACIÓN =====
+const token = sessionStorage.getItem("accessToken");
+if (!token) {
+  alert("Debes iniciar sesión para acceder al panel de administración");
+  window.location.href = "login.html";
+  throw new Error("Redirigiendo a login");
+}
+
+// ===== CÓDIGO DE ADMINISTRACIÓN =====
 document.addEventListener("DOMContentLoaded", () => {
   // Elementos del DOM
   const tablaBody = document.getElementById("tablaSalones");
@@ -13,43 +22,32 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentEditIndex = null;
 
   // Configurar eventos
-  function setupEventListeners() {
-    // Botón para nuevo salón (verificar si ya existe)
-    const header = document.querySelector(".card-header");
-    if (!document.getElementById("btnNuevoSalon")) {
-      const btnNuevo = document.createElement("button");
-      btnNuevo.id = "btnNuevoSalon";
-      btnNuevo.className = "btn btn-success ms-3";
-      btnNuevo.innerHTML = '<i class="fas fa-plus me-1"></i> Nuevo Salón';
-      btnNuevo.addEventListener("click", () => {
-        editMode = false;
-        currentEditIndex = null;
-        modalTitle.textContent = "Nuevo Salón";
-        formSalon.reset();
-        imagenPreview.style.display = "none";
-        salonModal.show();
-      });
-      header.appendChild(btnNuevo);
+  document.getElementById("btnNuevoSalon").addEventListener("click", () => {
+    editMode = false;
+    currentEditIndex = null;
+    modalTitle.textContent = "Nuevo Salón";
+    formSalon.reset();
+    imagenPreview.style.display = "none";
+    salonModal.show();
+  });
+
+  // Vista previa de imagen
+  imagenInput.addEventListener("change", function (e) {
+    if (this.files && this.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        preview.src = e.target.result;
+        imagenPreview.style.display = "block";
+      };
+      reader.readAsDataURL(this.files[0]);
     }
+  });
 
-    // Vista previa de imagen
-    imagenInput.addEventListener("change", function (e) {
-      if (this.files && this.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          preview.src = e.target.result;
-          imagenPreview.style.display = "block";
-        };
-        reader.readAsDataURL(this.files[0]);
-      }
-    });
-
-    // Enviar formulario
-    formSalon.addEventListener("submit", function (e) {
-      e.preventDefault();
-      guardarSalon();
-    });
-  }
+  // Enviar formulario
+  formSalon.addEventListener("submit", function (e) {
+    e.preventDefault();
+    guardarSalon();
+  });
 
   // Guardar o actualizar salón
   function guardarSalon() {
@@ -64,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       isNaN(capacidad) ||
       (!imagenFile && !editMode)
     ) {
-      mostrarAlerta("Por favor complete todos los campos requeridos", "danger");
+      mostrarAlerta("Complete todos los campos requeridos", "danger");
       return;
     }
 
@@ -77,10 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (editMode) {
       salones[currentEditIndex] = salon;
-      mostrarAlerta("Salón actualizado correctamente", "success");
+      mostrarAlerta("Salón actualizado", "success");
     } else {
       salones.push(salon);
-      mostrarAlerta("Salón agregado correctamente", "success");
+      mostrarAlerta("Salón agregado", "success");
     }
 
     localStorage.setItem("salones", JSON.stringify(salones));
@@ -94,41 +92,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (salones.length === 0) {
       tablaBody.innerHTML = `
-      <tr>
-        <td colspan="6" class="text-center py-4 text-muted">
-          <i class="fas fa-exclamation-circle me-2"></i>
-          No hay salones registrados
-        </td>
-      </tr>
-    `;
+                <tr>
+                    <td colspan="6" class="text-center py-4 text-muted">
+                        <i class="fas fa-exclamation-circle me-2"></i>
+                        No hay salones registrados
+                    </td>
+                </tr>`;
       return;
     }
 
     salones.forEach((salon, index) => {
       const row = document.createElement("tr");
       row.innerHTML = `
-      <th scope="row">${index + 1}</th>
-      <td>${salon.nombre}</td>
-      <td>$${salon.precio.toLocaleString("es-AR")}</td>
-      <td>${salon.capacidad}</td> 
-      <td>
-        <img src="${salon.imagen}" alt="${salon.nombre}" 
-             class="img-thumbnail" style="width: 80px; height: 60px; object-fit: cover;">
-      </td>
-      <td>
-        <div class="d-flex gap-2">
-          <button class="btn btn-sm btn-warning" onclick="editarSalon(${index})">
-            <i class="fas fa-edit"></i>
-          </button>
-          <button class="btn btn-sm btn-danger" onclick="eliminarSalon(${index})">
-            <i class="fas fa-trash"></i>
-          </button>
-        </div>
-      </td>
-    `;
+                <th scope="row">${index + 1}</th>
+                <td>${salon.nombre}</td>
+                <td>$${salon.precio.toLocaleString("es-AR")}</td>
+                <td>${salon.capacidad}</td>
+                <td>
+                    <img src="${salon.imagen}" alt="${salon.nombre}" 
+                         class="img-thumbnail" style="width: 80px; height: 60px; object-fit: cover;">
+                </td>
+                <td>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-warning" onclick="editarSalon(${index})">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger" onclick="eliminarSalon(${index})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </td>`;
       tablaBody.appendChild(row);
     });
   }
+
   // Funciones globales para los botones
   window.editarSalon = (index) => {
     editMode = true;
@@ -152,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
       salones.splice(index, 1);
       localStorage.setItem("salones", JSON.stringify(salones));
       cargarSalones();
-      mostrarAlerta("Salón eliminado correctamente", "info");
+      mostrarAlerta("Salón eliminado", "info");
     }
   };
 
@@ -160,14 +157,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const alerta = document.createElement("div");
     alerta.className = `alert alert-${tipo} alert-dismissible fade show position-fixed top-0 end-0 m-3`;
     alerta.innerHTML = `
-      ${mensaje}
-      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    `;
+            ${mensaje}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>`;
     document.body.appendChild(alerta);
     setTimeout(() => alerta.remove(), 3000);
   }
 
   // Inicializar
-  setupEventListeners();
   cargarSalones();
 });
