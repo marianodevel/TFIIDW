@@ -1,44 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Salones Spider-Kitty | Información</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salones Spider-Kitty | Información</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
     <!-- Font Awesome para el ícono X del menú -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="static/styles.css" />
     <!-- Fuente Inter -->
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-	</head>
-	<body>
-		<header class="header">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
       <div class="container-fluid">
         <div class="row d-flex align-items-center">
           <div class="col-md-4 col-6">
             <!--Cambiamos el contenedor del logo por un h1 para mejorar la accesibilidad y SEO-->
             <!--se agregó la etiqueta span para que salones quede como texto plano y no forme parte de la estructura-->
             <h1 class="title-header d-flex align-items-center gap-2">
-              <img class="logo-header" src="static/img/spider-kitty.png" alt="spider-kitty">
+              <img
+                class="logo-header"
+                src="static/img/spider-kitty.png"
+                alt="spider-kitty"
+              />
               <span>Salones Spider-Kitty</span>
             </h1>
           </div>
           <div class="col-md-8 col-6">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
-              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <button
+                class="navbar-toggler ms-auto"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
                 <span class="navbar-toggler-icon"></span>
-                <span class="navbar-close-icon d-none"><i class="fas fa-times"></i></span>
+                <span class="navbar-close-icon d-none"
+                  ><i class="fas fa-times"></i
+                ></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                  <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                  <li class="nav-item"><a class="nav-link" href="contacto.html">Contactanos</a></li>
-                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="info.html">¿Quiénes somos?</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Iniciar sesión</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Registrarse</a></li>
+                  <li class="nav-item" id="home">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item" id="contacto">
+                    <a class="nav-link" href="contacto.html">Contactanos</a>
+                  </li>
+                  <li class="nav-item" id="info">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="info.html"
+                      >¿Quiénes somos?</a
+                    >
+                  </li>
+                  <li class="nav-item" id="iniciar_sesion">
+                    <a class="nav-link" href="#">Iniciar sesión</a>
+                  </li>
+                  <li class="nav-item" id="registrarse">
+                    <a class="nav-link" href="#">Registrarse</a>
+                  </li>
+                  <li class="nav-item" id="administracion">
+                    <a class="nav-link" href="administracion.html"
+                      >Administracion</a
+                    >
+                  </li>
                 </ul>
               </div>
             </nav>
@@ -47,102 +96,139 @@
       </div>
     </header>
 
-		<main class="info">
-			<!--cambio de div por section-->
-			<section class="info-hero container">
-			  <h1 class="text-center mb-4">Tu punto de partida para encontrar el salón ideal</h1>
-			  <h2 class="text-center mb-5">Creamos este espacio para que alquilar un salón para un evento infantil sea simple, rápido y seguro. Vos elegís el lugar, nosotros lo acercamos.</h2>
-			</section>
-			<!--cambio de div por section-->
-			<section class="info-content container">
-				<!--agregamos un article alrededor del parrafo que antes no tenia-->
+    <main class="info">
+      <!--cambio de div por section-->
+      <section class="info-hero container">
+        <h1 class="text-center mb-4">
+          Tu punto de partida para encontrar el salón ideal
+        </h1>
+        <h2 class="text-center mb-5">
+          Creamos este espacio para que alquilar un salón para un evento
+          infantil sea simple, rápido y seguro. Vos elegís el lugar, nosotros lo
+          acercamos.
+        </h2>
+      </section>
+      <!--cambio de div por section-->
+      <section class="info-content container">
+        <!--agregamos un article alrededor del parrafo que antes no tenia-->
         <article class="bg-white p-4 rounded shadow-sm">
-          <p class="mb-0">Somos un equipo que entiende lo importante que es encontrar el lugar perfecto para celebrar momentos únicos. Por eso creamos esta plataforma: para conectar a quienes buscan un salón infantil con quienes tienen el espacio ideal para ofrecer.
-          Nos mueve la idea de hacer simple lo que antes era complicado. Reunimos salones de distintos estilos, tamaños y ubicaciones, todo en un solo lugar, para que puedas comparar, elegir y reservar sin perder tiempo.
-          Queremos que cada festejo empiece con una buena experiencia, desde el primer clic. Y si tenés un salón, también estás en el lugar correcto: te ayudamos a visibilizar tu espacio y llegar a más personas que están buscando lo que ofrecés.
-          Porque creemos que las mejores celebraciones empiezan con una buena elección, y nosotros estamos acá para acercártela.</p>
-        </article>				
-			</section>
-		</main>
-		  
-    <footer class="footer">
-      <!--cambio de div por section-->	
-      <section class="footer-columns">
-        <!--cambio de div por article-->	
-        <article class="footer-col logo-social">
-        <img class="footer-logo" src="static/img/spider-kitty.png" alt="Logo" />
-        <div class="social-icons">
-          <img class="redes-icons" src="static/img/x-icon.png" alt="X" />
-          <img class="redes-icons" src="static/img/instagram-icon.png" alt="Instagram" />
-          <img class="redes-icons" src="static/img/facebook-icon.png" alt="Facebook" />
-          <img class="redes-icons" src="static/img/linkedin-icon.png" alt="LinkedIn" />
-        </div>
+          <p class="mb-0">
+            Somos un equipo que entiende lo importante que es encontrar el lugar
+            perfecto para celebrar momentos únicos. Por eso creamos esta
+            plataforma: para conectar a quienes buscan un salón infantil con
+            quienes tienen el espacio ideal para ofrecer. Nos mueve la idea de
+            hacer simple lo que antes era complicado. Reunimos salones de
+            distintos estilos, tamaños y ubicaciones, todo en un solo lugar,
+            para que puedas comparar, elegir y reservar sin perder tiempo.
+            Queremos que cada festejo empiece con una buena experiencia, desde
+            el primer clic. Y si tenés un salón, también estás en el lugar
+            correcto: te ayudamos a visibilizar tu espacio y llegar a más
+            personas que están buscando lo que ofrecés. Porque creemos que las
+            mejores celebraciones empiezan con una buena elección, y nosotros
+            estamos acá para acercártela.
+          </p>
         </article>
-      
+      </section>
+    </main>
+
+    <footer class="footer">
+      <!--cambio de div por section-->
+      <section class="footer-columns">
+        <!--cambio de div por article-->
+        <article class="footer-col logo-social">
+          <img
+            class="footer-logo"
+            src="static/img/spider-kitty.png"
+            alt="Logo"
+          />
+          <div class="social-icons">
+            <img class="redes-icons" src="static/img/x-icon.png" alt="X" />
+            <img
+              class="redes-icons"
+              src="static/img/instagram-icon.png"
+              alt="Instagram"
+            />
+            <img
+              class="redes-icons"
+              src="static/img/facebook-icon.png"
+              alt="Facebook"
+            />
+            <img
+              class="redes-icons"
+              src="static/img/linkedin-icon.png"
+              alt="LinkedIn"
+            />
+          </div>
+        </article>
+
         <!--cambio de div por section-->
         <section class="footer-col">
-        <h4>Enlaces útiles</h4>
-        <ul>
-          <li>Inicio</li>
-          <li>Contactanos</li>
-          <li>¿Quiénes somos?</li>
-          <li>Nuestros salones</li>
-          <li>¿Tenés cuenta? Iniciar sesión</li>
-          <li>¿Sos nuevo? Registrarse</li>
-          <li>Reservas disponibles</li>
-        </ul>
+          <h4>Enlaces útiles</h4>
+          <ul>
+            <li>Inicio</li>
+            <li>Contactanos</li>
+            <li>¿Quiénes somos?</li>
+            <li>Nuestros salones</li>
+            <li>¿Tenés cuenta? Iniciar sesión</li>
+            <li>¿Sos nuevo? Registrarse</li>
+            <li>Reservas disponibles</li>
+          </ul>
         </section>
-      
+
         <!--cambio de div por section-->
         <section class="footer-col">
-        <h4>Ayuda</h4>
-        <ul>
-          <li>Preguntas frecuentes</li>
-          <li>Términos y condiciones</li>
-          <li>Política de privacidad</li>
-          <li>Centro de ayuda</li>
-          <li>Guía para tu evento</li>
-          <li>Cómo reservar</li>
-          <li>Cancelaciones y reembolsos</li>
-        </ul>
+          <h4>Ayuda</h4>
+          <ul>
+            <li>Preguntas frecuentes</li>
+            <li>Términos y condiciones</li>
+            <li>Política de privacidad</li>
+            <li>Centro de ayuda</li>
+            <li>Guía para tu evento</li>
+            <li>Cómo reservar</li>
+            <li>Cancelaciones y reembolsos</li>
+          </ul>
         </section>
-      
+
         <!--cambio de div por section-->
         <section class="footer-col">
-        <h4>Redes sociales</h4>
-        <ul>
-          <li>Facebook</li>
-          <li>Instagram</li>
-          <li>Pinterest</li>
-          <li>TikTok</li>
-          <li>Discord</li>
-          <li>LinkedIn</li>
-        </ul>
+          <h4>Redes sociales</h4>
+          <ul>
+            <li>Facebook</li>
+            <li>Instagram</li>
+            <li>Pinterest</li>
+            <li>TikTok</li>
+            <li>Discord</li>
+            <li>LinkedIn</li>
+          </ul>
         </section>
       </section>
-      
+
       <!--cambio de div por section-->
       <section class="medios-pago">
         <h2>Medios de pago</h2>
         <div class="logos-pago">
-        <img src="static/img/mercado-pago.png" alt="Mercado Pago" />
-        <img src="static/img/visa-logo.png" alt="Visa" />
-        <img src="static/img/mastercard-logo.png" alt="Mastercard" />
-        <img src="static/img/american-express-logo.png" alt="American Express" />
-        <img src="static/img/pago-facil-logo.png" alt="Pago Fácil" />
-        <img src="static/img/rapipago-logo.png" alt="Rapipago" />
+          <img src="static/img/mercado-pago.png" alt="Mercado Pago" />
+          <img src="static/img/visa-logo.png" alt="Visa" />
+          <img src="static/img/mastercard-logo.png" alt="Mastercard" />
+          <img
+            src="static/img/american-express-logo.png"
+            alt="American Express"
+          />
+          <img src="static/img/pago-facil-logo.png" alt="Pago Fácil" />
+          <img src="static/img/rapipago-logo.png" alt="Rapipago" />
         </div>
       </section>
-      <br/>
-      <hr/>
-      <br/>
+      <br />
+      <hr />
+      <br />
       <!--cambio de div por section-->
       <section class="copyright">
         <!--el link "idw.html" redirige a la landing page de la empresa desarrolladora del sitio-->
-        <p>© Copyright. Hecho con ❤️ por <a href="idw.html">IDW S.A.</a> Salones Spider-Kitty. Todos los derechos reservados</p>
+        <p>
+          © Copyright. Hecho con ❤️ por <a href="idw.html">IDW S.A.</a> Salones
+          Spider-Kitty. Todos los derechos reservados
+        </p>
       </section>
-      </footer>
-      
-    </body>
-  </html>
-  
+    </footer>
+  </body>
+</html>
