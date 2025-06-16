@@ -34,6 +34,8 @@
       <div class="container-fluid">
         <div class="row d-flex align-items-center">
           <div class="col-md-4 col-6">
+            <!--Cambiamos el contenedor del logo por un h1 para mejorar la accesibilidad y SEO-->
+            <!--se agregó la etiqueta span para que salones quede como texto plano y no forme parte de la estructura-->
             <h1 class="title-header d-flex align-items-center gap-2">
               <img
                 class="logo-header"
@@ -44,7 +46,7 @@
             </h1>
           </div>
           <div class="col-md-8 col-6">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
               <button
                 class="navbar-toggler ms-auto"
                 type="button"
@@ -76,16 +78,10 @@
                     >
                   </li>
                   <li class="nav-item" id="iniciar_sesion">
-                    <a
-                      class="nav-link btn btn-outline-light ms-2"
-                      href="login.html"
-                      >Iniciar sesión</a
-                    >
+                    <a class="nav-link" href="#">Iniciar sesión</a>
                   </li>
                   <li class="nav-item" id="registrarse">
-                    <a class="nav-link btn btn-light ms-2" href="#"
-                      >Registrarse</a
-                    >
+                    <a class="nav-link" href="#">Registrarse</a>
                   </li>
                   <li class="nav-item" id="administracion">
                     <a class="nav-link" href="administracion.html"
@@ -101,20 +97,22 @@
     </header>
 
     <main class="info">
-      <section class="info-hero container py-5 bg-light rounded-3 my-4">
-        <h1 class="text-center mb-4 display-4 fw-bold text-primary">
+      <!--cambio de div por section-->
+      <section class="info-hero container">
+        <h1 class="text-center mb-4">
           Tu punto de partida para encontrar el salón ideal
         </h1>
-        <h2 class="text-center mb-5 fs-3 text-muted">
+        <h2 class="text-center mb-5">
           Creamos este espacio para que alquilar un salón para un evento
           infantil sea simple, rápido y seguro. Vos elegís el lugar, nosotros lo
           acercamos.
         </h2>
       </section>
-
+      <!--cambio de div por section-->
       <section class="info-content container">
-        <article class="bg-white p-5 rounded-3 shadow">
-          <p class="mb-0 fs-5 lh-base">
+        <!--agregamos un article alrededor del parrafo que antes no tenia-->
+        <article class="bg-white p-4 rounded shadow-sm">
+          <p class="mb-0">
             Somos un equipo que entiende lo importante que es encontrar el lugar
             perfecto para celebrar momentos únicos. Por eso creamos esta
             plataforma: para conectar a quienes buscan un salón infantil con
@@ -133,188 +131,103 @@
       </section>
     </main>
 
-    <footer class="footer bg-body-tertiary">
-      <section class="footer-columns container py-5">
-        <article class="footer-col logo-social col-md-3">
+    <footer class="footer">
+      <!--cambio de div por section-->
+      <section class="footer-columns">
+        <!--cambio de div por article-->
+        <article class="footer-col logo-social">
           <img
-            class="footer-logo mb-3"
+            class="footer-logo"
             src="static/img/spider-kitty.png"
             alt="Logo"
-            width="120"
           />
-          <div class="social-icons d-flex gap-3">
+          <div class="social-icons">
+            <img class="redes-icons" src="static/img/x-icon.png" alt="X" />
             <img
-              class="redes-icons img-thumbnail rounded-circle"
-              src="static/img/x-icon.png"
-              alt="X"
-              width="40"
-            />
-            <img
-              class="redes-icons img-thumbnail rounded-circle"
+              class="redes-icons"
               src="static/img/instagram-icon.png"
               alt="Instagram"
-              width="40"
             />
             <img
-              class="redes-icons img-thumbnail rounded-circle"
+              class="redes-icons"
               src="static/img/facebook-icon.png"
               alt="Facebook"
-              width="40"
             />
             <img
-              class="redes-icons img-thumbnail rounded-circle"
+              class="redes-icons"
               src="static/img/linkedin-icon.png"
               alt="LinkedIn"
-              width="40"
             />
           </div>
         </article>
 
-        <section class="footer-col col-md-3">
-          <h4 class="fw-bold mb-3">Enlaces útiles</h4>
-          <ul class="list-unstyled">
-            <li class="mb-2">
-              <a href="index.html" class="text-decoration-none">Inicio</a>
-            </li>
-            <li class="mb-2">
-              <a href="contacto.html" class="text-decoration-none"
-                >Contactanos</a
-              >
-            </li>
-            <li class="mb-2">
-              <a href="info.html" class="text-decoration-none"
-                >¿Quiénes somos?</a
-              >
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none">Nuestros salones</a>
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none"
-                >¿Tenés cuenta? Iniciar sesión</a
-              >
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none"
-                >¿Sos nuevo? Registrarse</a
-              >
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none">Reservas disponibles</a>
-            </li>
+        <!--cambio de div por section-->
+        <section class="footer-col">
+          <h4>Enlaces útiles</h4>
+          <ul>
+            <li>Inicio</li>
+            <li>Contactanos</li>
+            <li>¿Quiénes somos?</li>
+            <li>Nuestros salones</li>
+            <li>¿Tenés cuenta? Iniciar sesión</li>
+            <li>¿Sos nuevo? Registrarse</li>
+            <li>Reservas disponibles</li>
           </ul>
         </section>
 
-        <section class="footer-col col-md-3">
-          <h4 class="fw-bold mb-3">Ayuda</h4>
-          <ul class="list-unstyled">
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none">Preguntas frecuentes</a>
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none"
-                >Términos y condiciones</a
-              >
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none"
-                >Política de privacidad</a
-              >
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none">Centro de ayuda</a>
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none">Guía para tu evento</a>
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none">Cómo reservar</a>
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none"
-                >Cancelaciones y reembolsos</a
-              >
-            </li>
+        <!--cambio de div por section-->
+        <section class="footer-col">
+          <h4>Ayuda</h4>
+          <ul>
+            <li>Preguntas frecuentes</li>
+            <li>Términos y condiciones</li>
+            <li>Política de privacidad</li>
+            <li>Centro de ayuda</li>
+            <li>Guía para tu evento</li>
+            <li>Cómo reservar</li>
+            <li>Cancelaciones y reembolsos</li>
           </ul>
         </section>
 
-        <section class="footer-col col-md-3">
-          <h4 class="fw-bold mb-3">Redes sociales</h4>
-          <ul class="list-unstyled">
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none">Facebook</a>
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none">Instagram</a>
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none">Pinterest</a>
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none">TikTok</a>
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none">Discord</a>
-            </li>
-            <li class="mb-2">
-              <a href="#" class="text-decoration-none">LinkedIn</a>
-            </li>
+        <!--cambio de div por section-->
+        <section class="footer-col">
+          <h4>Redes sociales</h4>
+          <ul>
+            <li>Facebook</li>
+            <li>Instagram</li>
+            <li>Pinterest</li>
+            <li>TikTok</li>
+            <li>Discord</li>
+            <li>LinkedIn</li>
           </ul>
         </section>
       </section>
 
-      <section class="medios-pago bg-light py-4">
-        <div class="container">
-          <h2 class="text-center mb-4 fw-bold">Medios de pago</h2>
-          <div class="logos-pago d-flex justify-content-center flex-wrap gap-3">
-            <img
-              src="static/img/mercado-pago.png"
-              alt="Mercado Pago"
-              class="img-fluid"
-              style="max-height: 30px"
-            />
-            <img
-              src="static/img/visa-logo.png"
-              alt="Visa"
-              class="img-fluid"
-              style="max-height: 30px"
-            />
-            <img
-              src="static/img/mastercard-logo.png"
-              alt="Mastercard"
-              class="img-fluid"
-              style="max-height: 30px"
-            />
-            <img
-              src="static/img/american-express-logo.png"
-              alt="American Express"
-              class="img-fluid"
-              style="max-height: 30px"
-            />
-            <img
-              src="static/img/pago-facil-logo.png"
-              alt="Pago Fácil"
-              class="img-fluid"
-              style="max-height: 30px"
-            />
-            <img
-              src="static/img/rapipago-logo.png"
-              alt="Rapipago"
-              class="img-fluid"
-              style="max-height: 30px"
-            />
-          </div>
+      <!--cambio de div por section-->
+      <section class="medios-pago">
+        <h2>Medios de pago</h2>
+        <div class="logos-pago">
+          <img src="static/img/mercado-pago.png" alt="Mercado Pago" />
+          <img src="static/img/visa-logo.png" alt="Visa" />
+          <img src="static/img/mastercard-logo.png" alt="Mastercard" />
+          <img
+            src="static/img/american-express-logo.png"
+            alt="American Express"
+          />
+          <img src="static/img/pago-facil-logo.png" alt="Pago Fácil" />
+          <img src="static/img/rapipago-logo.png" alt="Rapipago" />
         </div>
       </section>
-
-      <section class="copyright text-center py-3 bg-dark text-white">
-        <div class="container">
-          <p class="mb-0">
-            © Copyright. Hecho con ❤️ por
-            <a href="idw.html" class="text-white">IDW S.A.</a> Salones
-            Spider-Kitty. Todos los derechos reservados
-          </p>
-        </div>
+      <br />
+      <hr />
+      <br />
+      <!--cambio de div por section-->
+      <section class="copyright">
+        <!--el link "idw.html" redirige a la landing page de la empresa desarrolladora del sitio-->
+        <p>
+          © Copyright. Hecho con ❤️ por <a href="idw.html">IDW S.A.</a> Salones
+          Spider-Kitty. Todos los derechos reservados
+        </p>
       </section>
     </footer>
   </body>
