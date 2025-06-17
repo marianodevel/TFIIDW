@@ -9,7 +9,7 @@ const primeraVisita = () => {
 
 const llenarLocalStorage = async () => {
   try {
-    const response = await fetch("./data/salones.json");
+    const response = await fetch("../data/salones.json");
     if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
     const data = await response.json();
     if (!data.salones || !Array.isArray(data.salones))
